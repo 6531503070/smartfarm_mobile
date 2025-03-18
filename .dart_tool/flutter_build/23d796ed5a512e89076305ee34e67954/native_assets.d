@@ -1,1 +1,0 @@
- C:\\Users\\User\\Desktop\\SmartFarm\ Mobile\\smartfarm_mobile\\.dart_tool\\flutter_build\\23d796ed5a512e89076305ee34e67954\\native_assets.yaml: 
