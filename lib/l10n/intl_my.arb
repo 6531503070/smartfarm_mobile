@@ -1,0 +1,25 @@
+{
+    "@@locale": "my",
+
+    "projectName": "UNTRANSLATED",
+    "signIn": "အကောင့်ဝင်မည်",
+    "forgotPasswordOrContactUs": "Contact us / Forgot password?",
+    "welcomeSignIn": "UNKNOWN",
+    
+    "ok": "အိုကေ",
+    "cancel": "မလုပ်တော့ပါ",
+    "news": "သတင်း",
+    "video": "ဗီဒီယို",
+    "googleSignIn": "Google ဖြင့် အကောင့်ဝင်မည်",
+    "googleSignOut": "ထွက်မည်",
+    "detail": "အသေးစိတ်",
+    "error": "အမှားတစ်ခု ဖြစ်ပွားခဲ့သည်",
+    "reload": "ပြန်လည်ဖွင့်မည်",
+    "fetchFailed": "ဒေတာကို ရယူမရပါ",
+    "pleaseRetry": "ထပ်မံကြိုးစားပါ",
+    "noResult": "အချက်အလက် မရှိပါ",
+    "noTitle": "ခေါင်းစဉ် မရှိပါ",
+    "displayName": "ပြသမည့်အမည်",
+    "email": "အီးမေးလ်",
+    "uid": "အသုံးပြုသူ အိုင်ဒီ"
+  }
