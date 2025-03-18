@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:smartfarm_mobile/gen_l10n/l10n.dart';
+import 'package:smartfarm_mobile/ui/global_state.dart';
 import 'package:smartfarm_mobile/ui/route/contact_page.dart';
 import 'package:smartfarm_mobile/ui/route/control_page.dart';
 import 'package:smartfarm_mobile/ui/route/data_page.dart';
@@ -18,10 +19,10 @@ class App extends StatefulHookWidget {
 class _AppState extends State<App> {
   @override
   Widget build(BuildContext context) {
-    // Example: Using a hook to manage a counter state (if needed)
-    // final counter = useState<int>(0);
+    final currentLocale = useValueListenable(GlobalState.locale);
 
     return MaterialApp(
+      locale: currentLocale,
       title: 'Doitung Smart Farming',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
@@ -38,6 +39,7 @@ class _AppState extends State<App> {
       supportedLocales: const [
         Locale('en', ''), // English
         Locale('th', ''), // Thai
+        Locale('my', ''), // Myanmar
       ],
       localizationsDelegates: const [
         AppLocalizationDelegate(),

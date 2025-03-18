@@ -1,25 +1,13 @@
 {
   "@@locale": "th",
 
-  "projectName": "UNTRANSLATED",
+  "projectName": "การเกษตรอัจฉริยะ",
   "signIn": "เข้าสู่ระบบ",
-  "forgotPasswordOrContactUs": "Contact us / Forgot password?",
-  "welcomeSignIn": "UNKNOWN",
-  
-  "ok": "ตกลง",
-  "cancel": "ยกเลิก",
-  "news": "ข่าว",
-  "video": "วิดีโอ",
-  "googleSignIn": "ลงชื่อเข้าใช้ด้วย Google",
-  "googleSignOut": "ออกจากระบบ",
-  "detail": "รายละเอียด",
-  "error": "เกิดข้อผิดพลาด",
-  "reload": "โหลดใหม่",
-  "fetchFailed": "ไม่สามารถดึงข้อมูลได้",
-  "pleaseRetry": "โปรดลองอีกครั้ง",
-  "noResult": "ไม่มีข้อมูล",
-  "noTitle": "ไม่มีชื่อเรื่อง",
-  "displayName": "ชื่อที่แสดง",
+  "forgotPasswordOrContactUs": "ติดต่อเรา / ลืมรหัสผ่าน?",
+  "welcomeSignIn": "วันนี้คือวันใหม่ มันคือวันของคุณ คุณเป็นคนกำหนดมัน เข้าสู่ระบบเพื่อเริ่มต้นการจัดการฟาร์ม",
   "email": "อีเมล",
-  "uid": "รหัสผู้ใช้"
+  "home": "หน้าหลัก",
+
+  "controlPage": "IOT Controls",
+  "dataPage": "Data Management"
 }

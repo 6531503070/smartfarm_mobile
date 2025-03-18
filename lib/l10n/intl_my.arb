@@ -1,25 +1,13 @@
 {
-    "@@locale": "my",
+  "@@locale": "my",
+  
+  "projectName": "စမတ်လယ်ယာ",
+  "signIn": "ဝင်ရောက်မည်",
+  "forgotPasswordOrContactUs": "ကျွန်ုပ်တို့အားဆက်သွယ်ပါ / စကားဝှက်မေ့နေပါသလား?",
+  "welcomeSignIn": "ယနေ့သည်အသစ်သောနေ့ဖြစ်သည်။ ယင်းသည်သင့်နေ့ဖြစ်သည်။ သင်သည်၎င်းကိုဖန်တီးသည်။ လယ်ယာကိုစီမံခန့်ခွဲရန်ဝင်ရောက်ပါ။",
+  "email": "အီးမေးလ်",
+  "home": "အိမ်",
 
-    "projectName": "UNTRANSLATED",
-    "signIn": "အကောင့်ဝင်မည်",
-    "forgotPasswordOrContactUs": "Contact us / Forgot password?",
-    "welcomeSignIn": "UNKNOWN",
-    
-    "ok": "အိုကေ",
-    "cancel": "မလုပ်တော့ပါ",
-    "news": "သတင်း",
-    "video": "ဗီဒီယို",
-    "googleSignIn": "Google ဖြင့် အကောင့်ဝင်မည်",
-    "googleSignOut": "ထွက်မည်",
-    "detail": "အသေးစိတ်",
-    "error": "အမှားတစ်ခု ဖြစ်ပွားခဲ့သည်",
-    "reload": "ပြန်လည်ဖွင့်မည်",
-    "fetchFailed": "ဒေတာကို ရယူမရပါ",
-    "pleaseRetry": "ထပ်မံကြိုးစားပါ",
-    "noResult": "အချက်အလက် မရှိပါ",
-    "noTitle": "ခေါင်းစဉ် မရှိပါ",
-    "displayName": "ပြသမည့်အမည်",
-    "email": "အီးမေးလ်",
-    "uid": "အသုံးပြုသူ အိုင်ဒီ"
-  }
+  "controlPage": "IOT Controls",
+  "dataPage": "Data Management"
+}

@@ -22,28 +22,15 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "cancel": MessageLookupByLibrary.simpleMessage("ยกเลิก"),
-        "detail": MessageLookupByLibrary.simpleMessage("รายละเอียด"),
-        "displayName": MessageLookupByLibrary.simpleMessage("ชื่อที่แสดง"),
+        "controlPage": MessageLookupByLibrary.simpleMessage("IOT Controls"),
+        "dataPage": MessageLookupByLibrary.simpleMessage("Data Management"),
         "email": MessageLookupByLibrary.simpleMessage("อีเมล"),
-        "error": MessageLookupByLibrary.simpleMessage("เกิดข้อผิดพลาด"),
-        "fetchFailed":
-            MessageLookupByLibrary.simpleMessage("ไม่สามารถดึงข้อมูลได้"),
-        "forgotPasswordOrContactUs": MessageLookupByLibrary.simpleMessage(
-            "Contact us / Forgot password?"),
-        "googleSignIn":
-            MessageLookupByLibrary.simpleMessage("ลงชื่อเข้าใช้ด้วย Google"),
-        "googleSignOut": MessageLookupByLibrary.simpleMessage("ออกจากระบบ"),
-        "news": MessageLookupByLibrary.simpleMessage("ข่าว"),
-        "noResult": MessageLookupByLibrary.simpleMessage("ไม่มีข้อมูล"),
-        "noTitle": MessageLookupByLibrary.simpleMessage("ไม่มีชื่อเรื่อง"),
-        "ok": MessageLookupByLibrary.simpleMessage("ตกลง"),
-        "pleaseRetry": MessageLookupByLibrary.simpleMessage("โปรดลองอีกครั้ง"),
-        "projectName": MessageLookupByLibrary.simpleMessage("UNTRANSLATED"),
-        "reload": MessageLookupByLibrary.simpleMessage("โหลดใหม่"),
+        "forgotPasswordOrContactUs":
+            MessageLookupByLibrary.simpleMessage("ติดต่อเรา / ลืมรหัสผ่าน?"),
+        "home": MessageLookupByLibrary.simpleMessage("หน้าหลัก"),
+        "projectName": MessageLookupByLibrary.simpleMessage("การเกษตรอัจฉริยะ"),
         "signIn": MessageLookupByLibrary.simpleMessage("เข้าสู่ระบบ"),
-        "uid": MessageLookupByLibrary.simpleMessage("รหัสผู้ใช้"),
-        "video": MessageLookupByLibrary.simpleMessage("วิดีโอ"),
-        "welcomeSignIn": MessageLookupByLibrary.simpleMessage("UNKNOWN")
+        "welcomeSignIn": MessageLookupByLibrary.simpleMessage(
+            "วันนี้คือวันใหม่ มันคือวันของคุณ คุณเป็นคนกำหนดมัน เข้าสู่ระบบเพื่อเริ่มต้นการจัดการฟาร์ม")
       };
 }

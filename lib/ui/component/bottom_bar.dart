@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
+import 'package:smartfarm_mobile/ui/hook/use_l10n.dart';
 import 'package:smartfarm_mobile/ui/route/control_page.dart';
 import 'package:smartfarm_mobile/ui/route/data_page.dart';
 import 'package:smartfarm_mobile/ui/route/home_page.dart';
+import 'package:smartfarm_mobile/ui/theme/app_colors.dart';
 
-class BottomBar extends StatefulWidget {
+class BottomBar extends StatefulHookWidget {
   final int currentIndex;
 
   const BottomBar({Key? key, required this.currentIndex}) : super(key: key);
@@ -68,26 +71,31 @@ class _BottomBarState extends State<BottomBar> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = useL10n();
+    final colors = AppColors.light();
+
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [        
         SalomonBottomBar(
+          backgroundColor: colors.bottomBar,
           currentIndex: widget.currentIndex,
           onTap: _onItemTapped,
+          
           items: [
             SalomonBottomBarItem(
               icon: Icon(Icons.keyboard_command_key_sharp),
-              title: Text("Control"),
+              title: Text(l10n.controlPage),
               selectedColor: Colors.teal,
             ),
              SalomonBottomBarItem(
               icon: Icon(Icons.home_sharp),
-              title: Text("Home"),
+              title: Text(l10n.home),
               selectedColor: Colors.orange,
             ),
             SalomonBottomBarItem(
               icon: Icon(Icons.ssid_chart_sharp),
-              title: Text("Data"),
+              title: Text(l10n.dataPage),
               selectedColor: Colors.pink,
             ),
           ],

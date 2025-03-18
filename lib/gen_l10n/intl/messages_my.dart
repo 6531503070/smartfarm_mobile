@@ -22,28 +22,15 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "cancel": MessageLookupByLibrary.simpleMessage("မလုပ်တော့ပါ"),
-        "detail": MessageLookupByLibrary.simpleMessage("အသေးစိတ်"),
-        "displayName": MessageLookupByLibrary.simpleMessage("ပြသမည့်အမည်"),
+        "controlPage": MessageLookupByLibrary.simpleMessage("IOT Controls"),
+        "dataPage": MessageLookupByLibrary.simpleMessage("Data Management"),
         "email": MessageLookupByLibrary.simpleMessage("အီးမေးလ်"),
-        "error":
-            MessageLookupByLibrary.simpleMessage("အမှားတစ်ခု ဖြစ်ပွားခဲ့သည်"),
-        "fetchFailed": MessageLookupByLibrary.simpleMessage("ဒေတာကို ရယူမရပါ"),
         "forgotPasswordOrContactUs": MessageLookupByLibrary.simpleMessage(
-            "Contact us / Forgot password?"),
-        "googleSignIn":
-            MessageLookupByLibrary.simpleMessage("Google ဖြင့် အကောင့်ဝင်မည်"),
-        "googleSignOut": MessageLookupByLibrary.simpleMessage("ထွက်မည်"),
-        "news": MessageLookupByLibrary.simpleMessage("သတင်း"),
-        "noResult": MessageLookupByLibrary.simpleMessage("အချက်အလက် မရှိပါ"),
-        "noTitle": MessageLookupByLibrary.simpleMessage("ခေါင်းစဉ် မရှိပါ"),
-        "ok": MessageLookupByLibrary.simpleMessage("အိုကေ"),
-        "pleaseRetry": MessageLookupByLibrary.simpleMessage("ထပ်မံကြိုးစားပါ"),
-        "projectName": MessageLookupByLibrary.simpleMessage("UNTRANSLATED"),
-        "reload": MessageLookupByLibrary.simpleMessage("ပြန်လည်ဖွင့်မည်"),
-        "signIn": MessageLookupByLibrary.simpleMessage("အကောင့်ဝင်မည်"),
-        "uid": MessageLookupByLibrary.simpleMessage("အသုံးပြုသူ အိုင်ဒီ"),
-        "video": MessageLookupByLibrary.simpleMessage("ဗီဒီယို"),
-        "welcomeSignIn": MessageLookupByLibrary.simpleMessage("UNKNOWN")
+            "ကျွန်ုပ်တို့အားဆက်သွယ်ပါ / စကားဝှက်မေ့နေပါသလား?"),
+        "home": MessageLookupByLibrary.simpleMessage("အိမ်"),
+        "projectName": MessageLookupByLibrary.simpleMessage("စမတ်လယ်ယာ"),
+        "signIn": MessageLookupByLibrary.simpleMessage("ဝင်ရောက်မည်"),
+        "welcomeSignIn": MessageLookupByLibrary.simpleMessage(
+            "ယနေ့သည်အသစ်သောနေ့ဖြစ်သည်။ ယင်းသည်သင့်နေ့ဖြစ်သည်။ သင်သည်၎င်းကိုဖန်တီးသည်။ လယ်ယာကိုစီမံခန့်ခွဲရန်ဝင်ရောက်ပါ။")
       };
 }

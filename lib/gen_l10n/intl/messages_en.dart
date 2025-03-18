@@ -22,27 +22,14 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "cancel": MessageLookupByLibrary.simpleMessage("CANCEL"),
-        "detail": MessageLookupByLibrary.simpleMessage("Detail"),
-        "displayName": MessageLookupByLibrary.simpleMessage("Display Name"),
+        "controlPage": MessageLookupByLibrary.simpleMessage("IOT Controls"),
+        "dataPage": MessageLookupByLibrary.simpleMessage("Data Management"),
         "email": MessageLookupByLibrary.simpleMessage("Email"),
-        "error": MessageLookupByLibrary.simpleMessage("An error occurred"),
-        "fetchFailed":
-            MessageLookupByLibrary.simpleMessage("Could not get the data"),
         "forgotPasswordOrContactUs": MessageLookupByLibrary.simpleMessage(
             "Contact us / Forgot password?"),
-        "googleSignIn": MessageLookupByLibrary.simpleMessage("Google Sign-In"),
-        "googleSignOut": MessageLookupByLibrary.simpleMessage("Sign-Out"),
-        "news": MessageLookupByLibrary.simpleMessage("News"),
-        "noResult": MessageLookupByLibrary.simpleMessage("For Empty screen"),
-        "noTitle": MessageLookupByLibrary.simpleMessage("No Title"),
-        "ok": MessageLookupByLibrary.simpleMessage("OK"),
-        "pleaseRetry": MessageLookupByLibrary.simpleMessage("Please try again"),
+        "home": MessageLookupByLibrary.simpleMessage("Home"),
         "projectName": MessageLookupByLibrary.simpleMessage("Smart Farming"),
-        "reload": MessageLookupByLibrary.simpleMessage("Reload"),
         "signIn": MessageLookupByLibrary.simpleMessage("Sign In"),
-        "uid": MessageLookupByLibrary.simpleMessage("UserId"),
-        "video": MessageLookupByLibrary.simpleMessage("Video"),
         "welcomeSignIn": MessageLookupByLibrary.simpleMessage(
             "Today is a new day. It\'s your day. You shape it. Sign in to start managing farm.")
       };

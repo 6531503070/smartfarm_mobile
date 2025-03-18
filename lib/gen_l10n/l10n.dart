@@ -90,146 +90,6 @@ class L10n {
     );
   }
 
-  /// `OK`
-  String get ok {
-    return Intl.message(
-      'OK',
-      name: 'ok',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `CANCEL`
-  String get cancel {
-    return Intl.message(
-      'CANCEL',
-      name: 'cancel',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `News`
-  String get news {
-    return Intl.message(
-      'News',
-      name: 'news',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Video`
-  String get video {
-    return Intl.message(
-      'Video',
-      name: 'video',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Google Sign-In`
-  String get googleSignIn {
-    return Intl.message(
-      'Google Sign-In',
-      name: 'googleSignIn',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Sign-Out`
-  String get googleSignOut {
-    return Intl.message(
-      'Sign-Out',
-      name: 'googleSignOut',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Detail`
-  String get detail {
-    return Intl.message(
-      'Detail',
-      name: 'detail',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `An error occurred`
-  String get error {
-    return Intl.message(
-      'An error occurred',
-      name: 'error',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Reload`
-  String get reload {
-    return Intl.message(
-      'Reload',
-      name: 'reload',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Could not get the data`
-  String get fetchFailed {
-    return Intl.message(
-      'Could not get the data',
-      name: 'fetchFailed',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Please try again`
-  String get pleaseRetry {
-    return Intl.message(
-      'Please try again',
-      name: 'pleaseRetry',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `For Empty screen`
-  String get noResult {
-    return Intl.message(
-      'For Empty screen',
-      name: 'noResult',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `No Title`
-  String get noTitle {
-    return Intl.message(
-      'No Title',
-      name: 'noTitle',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Display Name`
-  String get displayName {
-    return Intl.message(
-      'Display Name',
-      name: 'displayName',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `Email`
   String get email {
     return Intl.message(
@@ -240,11 +100,31 @@ class L10n {
     );
   }
 
-  /// `UserId`
-  String get uid {
+  /// `Home`
+  String get home {
     return Intl.message(
-      'UserId',
-      name: 'uid',
+      'Home',
+      name: 'home',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `IOT Controls`
+  String get controlPage {
+    return Intl.message(
+      'IOT Controls',
+      name: 'controlPage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Data Management`
+  String get dataPage {
+    return Intl.message(
+      'Data Management',
+      name: 'dataPage',
       desc: '',
       args: [],
     );
