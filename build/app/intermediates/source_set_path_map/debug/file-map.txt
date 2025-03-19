@@ -3,41 +3,54 @@ com.example.smartfarm_mobile.app-lifecycle-livedata-core-2.7.0-1 C:\Users\User\.
 com.example.smartfarm_mobile.app-jetified-lifecycle-process-2.7.0-2 C:\Users\User\.gradle\caches\transforms-3\00cae66cd7d0b24bf3fb6fef49982980\transformed\jetified-lifecycle-process-2.7.0\res
 com.example.smartfarm_mobile.app-jetified-datastore-release-3 C:\Users\User\.gradle\caches\transforms-3\16ec22f14eeeec54588948a08ec4257c\transformed\jetified-datastore-release\res
 com.example.smartfarm_mobile.app-jetified-datastore-preferences-release-4 C:\Users\User\.gradle\caches\transforms-3\18fd31298ff0579941ef6a2831b2ad01\transformed\jetified-datastore-preferences-release\res
-com.example.smartfarm_mobile.app-jetified-appcompat-resources-1.1.0-5 C:\Users\User\.gradle\caches\transforms-3\1ad1943f4c692a1d9ebe359de276fedc\transformed\jetified-appcompat-resources-1.1.0\res
-com.example.smartfarm_mobile.app-jetified-datastore-core-release-6 C:\Users\User\.gradle\caches\transforms-3\2466b2a9769c4ab5560b3381ddf4951d\transformed\jetified-datastore-core-release\res
-com.example.smartfarm_mobile.app-appcompat-1.1.0-7 C:\Users\User\.gradle\caches\transforms-3\280a0e6f17de7d81b1c493092c22d303\transformed\appcompat-1.1.0\res
-com.example.smartfarm_mobile.app-core-runtime-2.2.0-8 C:\Users\User\.gradle\caches\transforms-3\33db8c84b1704a6ab46b63cf0e9db8ea\transformed\core-runtime-2.2.0\res
-com.example.smartfarm_mobile.app-lifecycle-livedata-2.7.0-9 C:\Users\User\.gradle\caches\transforms-3\42122db8a3d51323d06c92dd63207da0\transformed\lifecycle-livedata-2.7.0\res
-com.example.smartfarm_mobile.app-jetified-lifecycle-runtime-ktx-2.7.0-10 C:\Users\User\.gradle\caches\transforms-3\424e5885486f50ade3478b72cf6f6168\transformed\jetified-lifecycle-runtime-ktx-2.7.0\res
-com.example.smartfarm_mobile.app-jetified-lifecycle-livedata-core-ktx-2.7.0-11 C:\Users\User\.gradle\caches\transforms-3\50521294eff5de0a51fcb2c863e19ca5\transformed\jetified-lifecycle-livedata-core-ktx-2.7.0\res
-com.example.smartfarm_mobile.app-jetified-activity-ktx-1.8.1-12 C:\Users\User\.gradle\caches\transforms-3\572e1c48146347005d6ae3a1c9a49629\transformed\jetified-activity-ktx-1.8.1\res
-com.example.smartfarm_mobile.app-jetified-savedstate-1.2.1-13 C:\Users\User\.gradle\caches\transforms-3\5dbaac1576bb99d0de7cea97ff0609e6\transformed\jetified-savedstate-1.2.1\res
-com.example.smartfarm_mobile.app-recyclerview-1.0.0-14 C:\Users\User\.gradle\caches\transforms-3\645313ebfca41b3fc4f56d7b37952520\transformed\recyclerview-1.0.0\res
-com.example.smartfarm_mobile.app-jetified-lifecycle-viewmodel-ktx-2.7.0-15 C:\Users\User\.gradle\caches\transforms-3\6b62f48c93f11fe8a8deb1fe28a68510\transformed\jetified-lifecycle-viewmodel-ktx-2.7.0\res
-com.example.smartfarm_mobile.app-jetified-window-1.2.0-16 C:\Users\User\.gradle\caches\transforms-3\711c740d42f357da23f108b1f0645ba8\transformed\jetified-window-1.2.0\res
-com.example.smartfarm_mobile.app-jetified-core-1.0.0-17 C:\Users\User\.gradle\caches\transforms-3\8174f4bfd7aca36ca04555c47adfe262\transformed\jetified-core-1.0.0\res
-com.example.smartfarm_mobile.app-jetified-profileinstaller-1.3.1-18 C:\Users\User\.gradle\caches\transforms-3\8321a913f035202524b12a0fd2246a26\transformed\jetified-profileinstaller-1.3.1\res
-com.example.smartfarm_mobile.app-jetified-annotation-experimental-1.4.0-19 C:\Users\User\.gradle\caches\transforms-3\8a965feab6231b4adcafa11ad18f32e7\transformed\jetified-annotation-experimental-1.4.0\res
-com.example.smartfarm_mobile.app-preference-1.2.1-20 C:\Users\User\.gradle\caches\transforms-3\8bf68fd21ed5dccfe004395ffbcf3199\transformed\preference-1.2.1\res
-com.example.smartfarm_mobile.app-jetified-savedstate-ktx-1.2.1-21 C:\Users\User\.gradle\caches\transforms-3\8d31f4159b4481fa46ddf2e4c6067b30\transformed\jetified-savedstate-ktx-1.2.1\res
-com.example.smartfarm_mobile.app-jetified-lifecycle-viewmodel-savedstate-2.7.0-22 C:\Users\User\.gradle\caches\transforms-3\9419ed80fcf1ab687beb42ef2e5d1684\transformed\jetified-lifecycle-viewmodel-savedstate-2.7.0\res
-com.example.smartfarm_mobile.app-lifecycle-viewmodel-2.7.0-23 C:\Users\User\.gradle\caches\transforms-3\967ea1ebe8cdf770109ec0e2ade86d9b\transformed\lifecycle-viewmodel-2.7.0\res
-com.example.smartfarm_mobile.app-fragment-1.7.1-24 C:\Users\User\.gradle\caches\transforms-3\9a454706b79fec6c9f8eece0710ec69f\transformed\fragment-1.7.1\res
-com.example.smartfarm_mobile.app-coordinatorlayout-1.0.0-25 C:\Users\User\.gradle\caches\transforms-3\9f76973445a2930ab85050ffa8dacfeb\transformed\coordinatorlayout-1.0.0\res
-com.example.smartfarm_mobile.app-lifecycle-runtime-2.7.0-26 C:\Users\User\.gradle\caches\transforms-3\afa53a3ff1fbaed556572a174fcd1666\transformed\lifecycle-runtime-2.7.0\res
-com.example.smartfarm_mobile.app-transition-1.4.1-27 C:\Users\User\.gradle\caches\transforms-3\b7c890e0b2b7a1994d9669b2d1b12a0c\transformed\transition-1.4.1\res
-com.example.smartfarm_mobile.app-jetified-window-java-1.2.0-28 C:\Users\User\.gradle\caches\transforms-3\c9fafb93755e088c3a49996aa940e28a\transformed\jetified-window-java-1.2.0\res
-com.example.smartfarm_mobile.app-jetified-tracing-1.2.0-29 C:\Users\User\.gradle\caches\transforms-3\cb1e6ba65396c1ea9b4f977b5f5e1fe2\transformed\jetified-tracing-1.2.0\res
-com.example.smartfarm_mobile.app-core-1.13.1-30 C:\Users\User\.gradle\caches\transforms-3\daa016f69f13885c7ebe1fbd9b243ba2\transformed\core-1.13.1\res
-com.example.smartfarm_mobile.app-jetified-startup-runtime-1.1.1-31 C:\Users\User\.gradle\caches\transforms-3\f22071537e742cef2e6c143dabfc9f2c\transformed\jetified-startup-runtime-1.1.1\res
-com.example.smartfarm_mobile.app-jetified-activity-1.8.1-32 C:\Users\User\.gradle\caches\transforms-3\f28e9da52a8ad00ef2072959e4b47b60\transformed\jetified-activity-1.8.1\res
-com.example.smartfarm_mobile.app-slidingpanelayout-1.2.0-33 C:\Users\User\.gradle\caches\transforms-3\fafd0172f88ed64dac20d51c9c7c5bbe\transformed\slidingpanelayout-1.2.0\res
-com.example.smartfarm_mobile.app-jetified-fragment-ktx-1.7.1-34 C:\Users\User\.gradle\caches\transforms-3\fea40412c163828ace18c5c08721ad66\transformed\jetified-fragment-ktx-1.7.1\res
-com.example.smartfarm_mobile.app-debug-35 C:\Users\User\Desktop\SmartFarm Mobile\smartfarm_mobile\android\app\src\debug\res
-com.example.smartfarm_mobile.app-main-36 C:\Users\User\Desktop\SmartFarm Mobile\smartfarm_mobile\android\app\src\main\res
-com.example.smartfarm_mobile.app-pngs-37 C:\Users\User\Desktop\SmartFarm Mobile\smartfarm_mobile\build\app\generated\res\pngs\debug
-com.example.smartfarm_mobile.app-resValues-38 C:\Users\User\Desktop\SmartFarm Mobile\smartfarm_mobile\build\app\generated\res\resValues\debug
-com.example.smartfarm_mobile.app-packageDebugResources-39 C:\Users\User\Desktop\SmartFarm Mobile\smartfarm_mobile\build\app\intermediates\incremental\debug\packageDebugResources\merged.dir
-com.example.smartfarm_mobile.app-packageDebugResources-40 C:\Users\User\Desktop\SmartFarm Mobile\smartfarm_mobile\build\app\intermediates\incremental\debug\packageDebugResources\stripped.dir
-com.example.smartfarm_mobile.app-merged_res-41 C:\Users\User\Desktop\SmartFarm Mobile\smartfarm_mobile\build\app\intermediates\merged_res\debug
-com.example.smartfarm_mobile.app-packaged_res-42 C:\Users\User\Desktop\SmartFarm Mobile\smartfarm_mobile\build\shared_preferences_android\intermediates\packaged_res\debug
+com.example.smartfarm_mobile.app-jetified-datastore-core-release-5 C:\Users\User\.gradle\caches\transforms-3\2466b2a9769c4ab5560b3381ddf4951d\transformed\jetified-datastore-core-release\res
+com.example.smartfarm_mobile.app-localbroadcastmanager-1.1.0-6 C:\Users\User\.gradle\caches\transforms-3\2588c2cd9e123be95e82d248481c4ea5\transformed\localbroadcastmanager-1.1.0\res
+com.example.smartfarm_mobile.app-room-runtime-2.6.1-7 C:\Users\User\.gradle\caches\transforms-3\2e9bcb3b99e5838d6231bcb998e8ada9\transformed\room-runtime-2.6.1\res
+com.example.smartfarm_mobile.app-jetified-viewpager2-1.0.0-8 C:\Users\User\.gradle\caches\transforms-3\326fc360c9863f53797391c494742747\transformed\jetified-viewpager2-1.0.0\res
+com.example.smartfarm_mobile.app-coordinatorlayout-1.1.0-9 C:\Users\User\.gradle\caches\transforms-3\32ee8fc3c4da5ccb80600fb83d273070\transformed\coordinatorlayout-1.1.0\res
+com.example.smartfarm_mobile.app-core-runtime-2.2.0-10 C:\Users\User\.gradle\caches\transforms-3\33db8c84b1704a6ab46b63cf0e9db8ea\transformed\core-runtime-2.2.0\res
+com.example.smartfarm_mobile.app-lifecycle-livedata-2.7.0-11 C:\Users\User\.gradle\caches\transforms-3\42122db8a3d51323d06c92dd63207da0\transformed\lifecycle-livedata-2.7.0\res
+com.example.smartfarm_mobile.app-jetified-lifecycle-runtime-ktx-2.7.0-12 C:\Users\User\.gradle\caches\transforms-3\424e5885486f50ade3478b72cf6f6168\transformed\jetified-lifecycle-runtime-ktx-2.7.0\res
+com.example.smartfarm_mobile.app-jetified-emoji2-views-helper-1.3.0-13 C:\Users\User\.gradle\caches\transforms-3\49fb099f1c0c72c7c27aad087a5ee440\transformed\jetified-emoji2-views-helper-1.3.0\res
+com.example.smartfarm_mobile.app-jetified-lifecycle-livedata-core-ktx-2.7.0-14 C:\Users\User\.gradle\caches\transforms-3\50521294eff5de0a51fcb2c863e19ca5\transformed\jetified-lifecycle-livedata-core-ktx-2.7.0\res
+com.example.smartfarm_mobile.app-jetified-activity-ktx-1.8.1-15 C:\Users\User\.gradle\caches\transforms-3\572e1c48146347005d6ae3a1c9a49629\transformed\jetified-activity-ktx-1.8.1\res
+com.example.smartfarm_mobile.app-jetified-savedstate-1.2.1-16 C:\Users\User\.gradle\caches\transforms-3\5dbaac1576bb99d0de7cea97ff0609e6\transformed\jetified-savedstate-1.2.1\res
+com.example.smartfarm_mobile.app-cardview-1.0.0-17 C:\Users\User\.gradle\caches\transforms-3\698ac8662cc1e47092ff01b3f3376276\transformed\cardview-1.0.0\res
+com.example.smartfarm_mobile.app-jetified-lifecycle-viewmodel-ktx-2.7.0-18 C:\Users\User\.gradle\caches\transforms-3\6b62f48c93f11fe8a8deb1fe28a68510\transformed\jetified-lifecycle-viewmodel-ktx-2.7.0\res
+com.example.smartfarm_mobile.app-jetified-window-1.2.0-19 C:\Users\User\.gradle\caches\transforms-3\711c740d42f357da23f108b1f0645ba8\transformed\jetified-window-1.2.0\res
+com.example.smartfarm_mobile.app-media-1.7.0-20 C:\Users\User\.gradle\caches\transforms-3\7170407b9a724402f4aaea0bd472b7e0\transformed\media-1.7.0\res
+com.example.smartfarm_mobile.app-jetified-core-1.0.0-21 C:\Users\User\.gradle\caches\transforms-3\8174f4bfd7aca36ca04555c47adfe262\transformed\jetified-core-1.0.0\res
+com.example.smartfarm_mobile.app-jetified-profileinstaller-1.3.1-22 C:\Users\User\.gradle\caches\transforms-3\8321a913f035202524b12a0fd2246a26\transformed\jetified-profileinstaller-1.3.1\res
+com.example.smartfarm_mobile.app-jetified-annotation-experimental-1.4.0-23 C:\Users\User\.gradle\caches\transforms-3\8a965feab6231b4adcafa11ad18f32e7\transformed\jetified-annotation-experimental-1.4.0\res
+com.example.smartfarm_mobile.app-preference-1.2.1-24 C:\Users\User\.gradle\caches\transforms-3\8bf68fd21ed5dccfe004395ffbcf3199\transformed\preference-1.2.1\res
+com.example.smartfarm_mobile.app-jetified-savedstate-ktx-1.2.1-25 C:\Users\User\.gradle\caches\transforms-3\8d31f4159b4481fa46ddf2e4c6067b30\transformed\jetified-savedstate-ktx-1.2.1\res
+com.example.smartfarm_mobile.app-jetified-lifecycle-viewmodel-savedstate-2.7.0-26 C:\Users\User\.gradle\caches\transforms-3\9419ed80fcf1ab687beb42ef2e5d1684\transformed\jetified-lifecycle-viewmodel-savedstate-2.7.0\res
+com.example.smartfarm_mobile.app-recyclerview-1.1.0-27 C:\Users\User\.gradle\caches\transforms-3\94c6b31941aaa7bd346e28d03846ca4b\transformed\recyclerview-1.1.0\res
+com.example.smartfarm_mobile.app-lifecycle-viewmodel-2.7.0-28 C:\Users\User\.gradle\caches\transforms-3\967ea1ebe8cdf770109ec0e2ade86d9b\transformed\lifecycle-viewmodel-2.7.0\res
+com.example.smartfarm_mobile.app-fragment-1.7.1-29 C:\Users\User\.gradle\caches\transforms-3\9a454706b79fec6c9f8eece0710ec69f\transformed\fragment-1.7.1\res
+com.example.smartfarm_mobile.app-transition-1.5.0-30 C:\Users\User\.gradle\caches\transforms-3\a854e9203cd8ddf84ba9ef6d44d39b7f\transformed\transition-1.5.0\res
+com.example.smartfarm_mobile.app-constraintlayout-2.0.1-31 C:\Users\User\.gradle\caches\transforms-3\aedb4397676e1fe692f8bd72f053e010\transformed\constraintlayout-2.0.1\res
+com.example.smartfarm_mobile.app-lifecycle-runtime-2.7.0-32 C:\Users\User\.gradle\caches\transforms-3\afa53a3ff1fbaed556572a174fcd1666\transformed\lifecycle-runtime-2.7.0\res
+com.example.smartfarm_mobile.app-sqlite-framework-2.4.0-33 C:\Users\User\.gradle\caches\transforms-3\b00c85c1fd6cf8a3a2bd701798f515da\transformed\sqlite-framework-2.4.0\res
+com.example.smartfarm_mobile.app-jetified-window-java-1.2.0-34 C:\Users\User\.gradle\caches\transforms-3\c9fafb93755e088c3a49996aa940e28a\transformed\jetified-window-java-1.2.0\res
+com.example.smartfarm_mobile.app-jetified-tracing-1.2.0-35 C:\Users\User\.gradle\caches\transforms-3\cb1e6ba65396c1ea9b4f977b5f5e1fe2\transformed\jetified-tracing-1.2.0\res
+com.example.smartfarm_mobile.app-material-1.12.0-36 C:\Users\User\.gradle\caches\transforms-3\d24313d47efa3f54b9882a3d198734d3\transformed\material-1.12.0\res
+com.example.smartfarm_mobile.app-sqlite-2.4.0-37 C:\Users\User\.gradle\caches\transforms-3\d2a479ba87b14670bfcefb65af13588b\transformed\sqlite-2.4.0\res
+com.example.smartfarm_mobile.app-core-1.13.1-38 C:\Users\User\.gradle\caches\transforms-3\daa016f69f13885c7ebe1fbd9b243ba2\transformed\core-1.13.1\res
+com.example.smartfarm_mobile.app-jetified-appcompat-resources-1.7.0-39 C:\Users\User\.gradle\caches\transforms-3\dde72a2ae67f5ea90c88c948834eeeae\transformed\jetified-appcompat-resources-1.7.0\res
+com.example.smartfarm_mobile.app-drawerlayout-1.1.1-40 C:\Users\User\.gradle\caches\transforms-3\e32d4c76a6a28a372ce6e1cc17d9ffed\transformed\drawerlayout-1.1.1\res
+com.example.smartfarm_mobile.app-jetified-emoji2-1.3.0-41 C:\Users\User\.gradle\caches\transforms-3\e41306b1fca18e0b1a68c18920b5785c\transformed\jetified-emoji2-1.3.0\res
+com.example.smartfarm_mobile.app-appcompat-1.7.0-42 C:\Users\User\.gradle\caches\transforms-3\edaf5db0bb3e86c9805a533512863b68\transformed\appcompat-1.7.0\res
+com.example.smartfarm_mobile.app-jetified-startup-runtime-1.1.1-43 C:\Users\User\.gradle\caches\transforms-3\f22071537e742cef2e6c143dabfc9f2c\transformed\jetified-startup-runtime-1.1.1\res
+com.example.smartfarm_mobile.app-jetified-activity-1.8.1-44 C:\Users\User\.gradle\caches\transforms-3\f28e9da52a8ad00ef2072959e4b47b60\transformed\jetified-activity-1.8.1\res
+com.example.smartfarm_mobile.app-slidingpanelayout-1.2.0-45 C:\Users\User\.gradle\caches\transforms-3\fafd0172f88ed64dac20d51c9c7c5bbe\transformed\slidingpanelayout-1.2.0\res
+com.example.smartfarm_mobile.app-jetified-fragment-ktx-1.7.1-46 C:\Users\User\.gradle\caches\transforms-3\fea40412c163828ace18c5c08721ad66\transformed\jetified-fragment-ktx-1.7.1\res
+com.example.smartfarm_mobile.app-debug-47 C:\Users\User\Desktop\SmartFarm Mobile\smartfarm_mobile\android\app\src\debug\res
+com.example.smartfarm_mobile.app-main-48 C:\Users\User\Desktop\SmartFarm Mobile\smartfarm_mobile\android\app\src\main\res
+com.example.smartfarm_mobile.app-pngs-49 C:\Users\User\Desktop\SmartFarm Mobile\smartfarm_mobile\build\app\generated\res\pngs\debug
+com.example.smartfarm_mobile.app-resValues-50 C:\Users\User\Desktop\SmartFarm Mobile\smartfarm_mobile\build\app\generated\res\resValues\debug
+com.example.smartfarm_mobile.app-packageDebugResources-51 C:\Users\User\Desktop\SmartFarm Mobile\smartfarm_mobile\build\app\intermediates\incremental\debug\packageDebugResources\merged.dir
+com.example.smartfarm_mobile.app-packageDebugResources-52 C:\Users\User\Desktop\SmartFarm Mobile\smartfarm_mobile\build\app\intermediates\incremental\debug\packageDebugResources\stripped.dir
+com.example.smartfarm_mobile.app-merged_res-53 C:\Users\User\Desktop\SmartFarm Mobile\smartfarm_mobile\build\app\intermediates\merged_res\debug
+com.example.smartfarm_mobile.app-packaged_res-54 C:\Users\User\Desktop\SmartFarm Mobile\smartfarm_mobile\build\awesome_notifications\intermediates\packaged_res\debug
+com.example.smartfarm_mobile.app-packaged_res-55 C:\Users\User\Desktop\SmartFarm Mobile\smartfarm_mobile\build\shared_preferences_android\intermediates\packaged_res\debug

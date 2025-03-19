@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:smartfarm_mobile/gen/assets.gen.dart';
-import 'package:smartfarm_mobile/ui/global_state.dart';
+import 'package:smartfarm_mobile/ui/settings.dart';
 import 'package:smartfarm_mobile/ui/theme/app_colors.dart';
+
+import 'package:shadcn_flutter/shadcn_flutter.dart' as shadcn;
 
 class TopBar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
@@ -74,7 +76,7 @@ class TopBar extends StatelessWidget implements PreferredSizeWidget {
                 elevation: 8.0,
               ).then((selectedLocale) {
                 if (selectedLocale != null) {
-                  GlobalState.locale.value = selectedLocale;
+                  Settings.locale.value = selectedLocale;
                 }
               });
             }, // language btn
@@ -91,5 +93,53 @@ class TopBar extends StatelessWidget implements PreferredSizeWidget {
         ),
       ],
     );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // return shadcn.OutlinedContainer(
+    //   clipBehavior: Clip.antiAliasWithSaveLayer,
+    //   child: shadcn.AppBar(
+    //     header: const Text('This is Header'),
+    //     title: const Text('This is Title'),
+    //     subtitle: const Text('This is Subtitle'),
+    //     leading: [
+    //       shadcn.OutlineButton(
+    //         density: shadcn.ButtonDensity.icon,
+    //         onPressed: () {},
+    //         child: const Icon(Icons.arrow_back),
+    //       ),
+    //     ],
+    //     trailing: [
+    //       shadcn.OutlineButton(
+    //         density: shadcn.ButtonDensity.icon,
+    //         onPressed: () {},
+    //         child: const Icon(Icons.search),
+    //       ),
+    //       shadcn.OutlineButton(
+    //         density: shadcn.ButtonDensity.icon,
+    //         onPressed: () {},
+    //         child: const Icon(Icons.more_vert),
+    //       ),
+    //     ],
+    //   ),
+    // );
+
+
+
   }
 }

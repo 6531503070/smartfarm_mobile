@@ -34,12 +34,21 @@ dependencies:
   # For Translation
   intl: ^0.19.0
   
+  # For Filesystem
+  path: ^1.9.0
+
+  # For Notification
+  awesome_notifications: ^0.10.0
+  
   # For UIs
   fl_chart: ^0.70.2
   cupertino_icons: ^1.0.8
   page_transition: ^2.1.0
   salomon_bottom_bar: ^3.3.2
-  
+  animated_custom_dropdown: ^3.1.1
+  font_awesome_flutter: ^10.8.0
+  syncfusion_flutter_charts: ^28.2.12
+  shadcn_flutter: ^0.0.24
 
 dev_dependencies:
   flutter_test:

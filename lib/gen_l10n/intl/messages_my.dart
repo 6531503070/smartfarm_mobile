@@ -22,8 +22,8 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "controlPage": MessageLookupByLibrary.simpleMessage("IOT Controls"),
-        "dataPage": MessageLookupByLibrary.simpleMessage("Data Management"),
+        "controlPage": MessageLookupByLibrary.simpleMessage("_UNTRANSLATED_"),
+        "dataPage": MessageLookupByLibrary.simpleMessage("_UNTRANSLATED_"),
         "email": MessageLookupByLibrary.simpleMessage("အီးမေးလ်"),
         "forgotPasswordOrContactUs": MessageLookupByLibrary.simpleMessage(
             "ကျွန်ုပ်တို့အားဆက်သွယ်ပါ / စကားဝှက်မေ့နေပါသလား?"),

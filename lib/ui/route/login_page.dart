@@ -1,24 +1,24 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' as material;
+import 'package:shadcn_flutter/shadcn_flutter.dart';
+
 import 'package:flutter/services.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:smartfarm_mobile/gen/assets.gen.dart';
-import 'package:smartfarm_mobile/ui/component/bottom_bar.dart';
 import 'package:smartfarm_mobile/ui/hook/use_l10n.dart';
-import 'package:smartfarm_mobile/ui/theme_manager.dart';
 import 'package:smartfarm_mobile/ui/theme/app_colors.dart';
 
 class EnglishAndEmailTextInputFormatter extends TextInputFormatter {
   @override
   TextEditingValue formatEditUpdate(
-      TextEditingValue oldValue, TextEditingValue newValue) {
-    final newText = newValue.text.replaceAll(RegExp(r'[^\w\s@.-]'), '');
+    TextEditingValue oldValue, TextEditingValue newValue) {
+      final newText = newValue.text.replaceAll(RegExp(r'[^\w\s@.-]'), '');
 
-    // Ensure the cursor position is maintained correctly
-    final selectionIndex = newText.length;
-    return TextEditingValue(
-      text: newText,
-      selection: TextSelection.collapsed(offset: selectionIndex),
-    );
+      // Ensure the cursor position is maintained correctly
+      final selectionIndex = newText.length;
+      return TextEditingValue(
+        text: newText,
+        selection: TextSelection.collapsed(offset: selectionIndex),
+      );
   }
 }
 
@@ -44,49 +44,23 @@ class _LoginState extends State<LoginPage> {
     super.dispose();
   }
 
-  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  final GlobalKey<material.FormState> _formKey = GlobalKey<material.FormState>();
   
   @override
   Widget build(BuildContext context) {
     final l10n = useL10n();
     final colors = AppColors.light();
-    final themeMode = useState<String>("system");
-
-    useEffect(() {
-      Future<void> loadTheme() async {
-        String savedTheme = await ThemeManager.loadTheme();
-        themeMode.value = savedTheme;
-      }
-
-      loadTheme();
-      return null;
-    }, []);
-
-    void setTheme(String value) async {
-      await ThemeManager.saveTheme(value);
-      themeMode.value = value;
-    }
-
-    ThemeMode currentThemeMode;
-    switch (themeMode.value) {
-      case "light":
-        currentThemeMode = ThemeMode.light;
-        break;
-      case "dark":
-        currentThemeMode = ThemeMode.dark;
-        break;
-      default:
-        currentThemeMode = ThemeMode.system;
-    }
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text(""),
-        centerTitle: true,
-        automaticallyImplyLeading: false,
-      ),
+      headers: [
+        AppBar(
+          title: Text(""),
+        ),
+      ],
       
-      body: Form(
+      footers: [],
+      
+      child: Form(
         key: _formKey,
         child: Center(
           child: Container(
@@ -105,7 +79,7 @@ class _LoginState extends State<LoginPage> {
                     padding: const EdgeInsets.symmetric(horizontal: 16.0),
                     child: Text(
                       l10n.projectName,
-                      style: Theme.of(context).textTheme.headlineSmall,
+                      style: material.Theme.of(context).textTheme.headlineSmall,
                     ),
                   ),
 
@@ -115,14 +89,14 @@ class _LoginState extends State<LoginPage> {
                     padding: const EdgeInsets.only(top: 8.0),
                     child: Text(
                       l10n.welcomeSignIn,
-                      style: Theme.of(context).textTheme.bodyMedium,
+                      style: material.Theme.of(context).textTheme.bodyMedium,
                       textAlign: TextAlign.left,
                     ),
                   ),
                   
                   SizedBox(height: 16),
                   
-                  TextFormField(
+                  material.TextFormField(
                     controller: emailController,
                     keyboardType: TextInputType.text,
                     inputFormatters: [EnglishAndEmailTextInputFormatter()],
@@ -139,16 +113,16 @@ class _LoginState extends State<LoginPage> {
 
                       return null;
                     },
-                    decoration: const InputDecoration(
+                    decoration: const material.InputDecoration(
                       labelText: 'Email',
                       hintText: 'Enter your email',
                       prefixIcon: Icon(Icons.email_outlined),
-                      border: OutlineInputBorder(),
+                      border: material.OutlineInputBorder(),
                     ),
                   ),
                   SizedBox(height: 16),
                   
-                  TextFormField(
+                  material.TextFormField(
                     controller: passwordController,
                     validator: (value) {
                       if (value == null || value.isEmpty) {
@@ -161,12 +135,12 @@ class _LoginState extends State<LoginPage> {
                       return null;
                     },
                     obscureText: !_isPasswordVisible,
-                    decoration: InputDecoration(
+                    decoration: material.InputDecoration(
                         labelText: 'Password',
                         hintText: 'Enter your password',
                         prefixIcon: const Icon(Icons.lock_outline_rounded),
-                        border: const OutlineInputBorder(),
-                        suffixIcon: IconButton(
+                        border: const material.OutlineInputBorder(),
+                        suffixIcon: material.IconButton(
                           icon: Icon(_isPasswordVisible
                               ? Icons.visibility_off
                               : Icons.visibility),
@@ -205,14 +179,14 @@ class _LoginState extends State<LoginPage> {
                           borderRadius: BorderRadius.circular(5),
                           boxShadow: <BoxShadow>[
                             BoxShadow(
-                                color: Colors.grey.withOpacity(0.7),
+                                color: material.Colors.grey.withOpacity(0.7),
                                 blurRadius: 5,
                                 offset: Offset(3, 3),
                                 spreadRadius: 3)
                           ]),
                       
-                      child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
+                      child: material.ElevatedButton(
+                        style: material.ElevatedButton.styleFrom(
                           padding: EdgeInsets.symmetric(vertical: 5),
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(5)),
@@ -227,7 +201,7 @@ class _LoginState extends State<LoginPage> {
                         child: Padding(
                           padding: EdgeInsets.all(10.0),
                           child: _isSigningIn
-                              ? CircularProgressIndicator(
+                              ? material.CircularProgressIndicator(
                                   color: Colors.white,
                                 )
                               : Text(

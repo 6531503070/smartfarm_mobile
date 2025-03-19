@@ -8,6 +8,6 @@
   "email": "อีเมล",
   "home": "หน้าหลัก",
 
-  "controlPage": "IOT Controls",
-  "dataPage": "Data Management"
+  "controlPage": "หลักควบคุม",
+  "dataPage": "หลักจัดการข้อมูล"
 }

@@ -1,34 +1,32 @@
-import 'package:flutter/material.dart';
+import 'package:shadcn_flutter/shadcn_flutter.dart';
+
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:smartfarm_mobile/gen_l10n/l10n.dart';
-import 'package:smartfarm_mobile/ui/global_state.dart';
+import 'package:smartfarm_mobile/ui/settings.dart';
 import 'package:smartfarm_mobile/ui/route/contact_page.dart';
 import 'package:smartfarm_mobile/ui/route/control_page.dart';
 import 'package:smartfarm_mobile/ui/route/data_page.dart';
 import 'package:smartfarm_mobile/ui/route/home_page.dart';
 import 'package:smartfarm_mobile/ui/route/login_page.dart';
 
-class App extends StatefulHookWidget {
+class App extends HookWidget {
   const App({Key? key}) : super(key: key);
 
   @override
-  _AppState createState() => _AppState();
-}
-
-class _AppState extends State<App> {
-  @override
   Widget build(BuildContext context) {
-    final currentLocale = useValueListenable(GlobalState.locale);
+    final currentLocale = useValueListenable(Settings.locale);
+    final currentAppTheme = useValueListenable(Settings.appTheme);
 
-    return MaterialApp(
+    return ShadcnApp(
       locale: currentLocale,
       title: 'Doitung Smart Farming',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+        colorScheme: currentAppTheme,
+        radius: 0.5,
       ),
-      home: const HomePage(), // Starter-Page
+
+      home: const LoginPage(), // Starter-Page
       routes: {
         '/login': (context) => const LoginPage(),
         '/home': (context) => const HomePage(),
@@ -36,11 +34,13 @@ class _AppState extends State<App> {
         '/control': (context) => const ControlPage(),
         '/contact': (context) => const ContactPage(),
       },
+
       supportedLocales: const [
         Locale('en', ''), // English
         Locale('th', ''), // Thai
         Locale('my', ''), // Myanmar
       ],
+      
       localizationsDelegates: const [
         AppLocalizationDelegate(),
         GlobalMaterialLocalizations.delegate,
