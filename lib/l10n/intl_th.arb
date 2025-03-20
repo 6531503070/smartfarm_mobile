@@ -8,6 +8,10 @@
   "email": "อีเมล",
   "home": "หน้าหลัก",
 
-  "controlPage": "หลักควบคุม",
-  "dataPage": "หลักจัดการข้อมูล"
+  "controlPage": "หน้าควบคุม",
+  "dataPage": "หน้าจัดการข้อมูล",
+
+  "waterUsage": "การใช้น้ำ",
+  "avgTemperature": "อุณหภูมิเฉลี่ย",
+  "avgRainfall": "ปริมาณน้ำฝนเฉลี่ย"
 }

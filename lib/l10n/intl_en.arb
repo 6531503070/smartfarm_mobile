@@ -9,5 +9,9 @@
   "home": "Home",
 
   "controlPage": "IOT Controls",
-  "dataPage": "Data Management"
+  "dataPage": "Data Management",
+
+  "waterUsage": "Water Usage",
+  "avgTemperature": "Avg. Temperature",
+  "avgRainfall": "Avg. Rainfall"
 }

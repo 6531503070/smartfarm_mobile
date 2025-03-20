@@ -22,14 +22,20 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "controlPage": MessageLookupByLibrary.simpleMessage("_UNTRANSLATED_"),
-        "dataPage": MessageLookupByLibrary.simpleMessage("_UNTRANSLATED_"),
+        "avgRainfall":
+            MessageLookupByLibrary.simpleMessage("ပျမ်းမျှမိုးရွာနှုန်း"),
+        "avgTemperature":
+            MessageLookupByLibrary.simpleMessage("ပျမ်းမျှအပူချိန်"),
+        "controlPage":
+            MessageLookupByLibrary.simpleMessage("ထိန်းချုပ်မှုစာမျက်နှာ"),
+        "dataPage": MessageLookupByLibrary.simpleMessage("ဒေတာစာမျက်နှာ"),
         "email": MessageLookupByLibrary.simpleMessage("အီးမေးလ်"),
         "forgotPasswordOrContactUs": MessageLookupByLibrary.simpleMessage(
             "ကျွန်ုပ်တို့အားဆက်သွယ်ပါ / စကားဝှက်မေ့နေပါသလား?"),
         "home": MessageLookupByLibrary.simpleMessage("အိမ်"),
         "projectName": MessageLookupByLibrary.simpleMessage("စမတ်လယ်ယာ"),
         "signIn": MessageLookupByLibrary.simpleMessage("ဝင်ရောက်မည်"),
+        "waterUsage": MessageLookupByLibrary.simpleMessage("ရေသုံးစွဲမှု"),
         "welcomeSignIn": MessageLookupByLibrary.simpleMessage(
             "ယနေ့သည်အသစ်သောနေ့ဖြစ်သည်။ ယင်းသည်သင့်နေ့ဖြစ်သည်။ သင်သည်၎င်းကိုဖန်တီးသည်။ လယ်ယာကိုစီမံခန့်ခွဲရန်ဝင်ရောက်ပါ။")
       };

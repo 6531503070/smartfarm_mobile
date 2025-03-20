@@ -172,20 +172,24 @@ class _LoginState extends State<LoginPage> {
                     width: double.infinity,
                     child: DecoratedBox(
                       decoration: BoxDecoration(
-                          gradient: LinearGradient(colors: [
+                        gradient: LinearGradient(
+                          colors: [
                             colors.signIn,
                             colors.signIn,
-                          ]),
-                          borderRadius: BorderRadius.circular(5),
-                          boxShadow: <BoxShadow>[
-                            BoxShadow(
-                                color: material.Colors.grey.withOpacity(0.7),
-                                blurRadius: 5,
-                                offset: Offset(3, 3),
-                                spreadRadius: 3)
-                          ]),
+                          ]
+                        ),
+                        borderRadius: BorderRadius.circular(5),
+                        boxShadow: <BoxShadow>[
+                          BoxShadow(
+                              color: material.Colors.grey.withOpacity(0.7),
+                              blurRadius: 5,
+                              offset: Offset(3, 3),
+                              spreadRadius: 3)
+                        ]
+                      ),
                       
                       child: material.ElevatedButton(
+                        onPressed: _signIn,
                         style: material.ElevatedButton.styleFrom(
                           padding: EdgeInsets.symmetric(vertical: 5),
                           shape: RoundedRectangleBorder(
@@ -197,7 +201,7 @@ class _LoginState extends State<LoginPage> {
                               Colors.transparent.withOpacity(0.12),
                           shadowColor: Colors.transparent,
                         ),
-
+                        
                         child: Padding(
                           padding: EdgeInsets.all(10.0),
                           child: _isSigningIn
@@ -212,7 +216,6 @@ class _LoginState extends State<LoginPage> {
                                       color: Colors.white),
                                 ),
                         ),
-                        onPressed: _signIn,
                       ),
                     ),
                   ),

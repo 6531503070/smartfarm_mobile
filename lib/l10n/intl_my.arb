@@ -8,6 +8,10 @@
   "email": "အီးမေးလ်",
   "home": "အိမ်",
 
-  "controlPage": "_UNTRANSLATED_",
-  "dataPage": "_UNTRANSLATED_"
+  "controlPage": "ထိန်းချုပ်မှုစာမျက်နှာ",
+  "dataPage": "ဒေတာစာမျက်နှာ",
+
+  "waterUsage": "ရေသုံးစွဲမှု",
+  "avgTemperature": "ပျမ်းမျှအပူချိန်",
+  "avgRainfall": "ပျမ်းမျှမိုးရွာနှုန်း"
 }

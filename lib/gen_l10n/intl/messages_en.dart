@@ -22,6 +22,9 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "avgRainfall": MessageLookupByLibrary.simpleMessage("Avg. Rainfall"),
+        "avgTemperature":
+            MessageLookupByLibrary.simpleMessage("Avg. Temperature"),
         "controlPage": MessageLookupByLibrary.simpleMessage("IOT Controls"),
         "dataPage": MessageLookupByLibrary.simpleMessage("Data Management"),
         "email": MessageLookupByLibrary.simpleMessage("Email"),
@@ -30,6 +33,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "home": MessageLookupByLibrary.simpleMessage("Home"),
         "projectName": MessageLookupByLibrary.simpleMessage("Smart Farming"),
         "signIn": MessageLookupByLibrary.simpleMessage("Sign In"),
+        "waterUsage": MessageLookupByLibrary.simpleMessage("Water Usage"),
         "welcomeSignIn": MessageLookupByLibrary.simpleMessage(
             "Today is a new day. It\'s your day. You shape it. Sign in to start managing farm.")
       };

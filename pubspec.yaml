@@ -49,6 +49,9 @@ dependencies:
   font_awesome_flutter: ^10.8.0
   syncfusion_flutter_charts: ^28.2.12
   shadcn_flutter: ^0.0.24
+  lucide_icons: ^0.257.0
+  bootstrap_icons: ^1.11.3
+  google_fonts: ^6.2.1
 
 dev_dependencies:
   flutter_test:

@@ -129,6 +129,36 @@ class L10n {
       args: [],
     );
   }
+
+  /// `Water Usage`
+  String get waterUsage {
+    return Intl.message(
+      'Water Usage',
+      name: 'waterUsage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Avg. Temperature`
+  String get avgTemperature {
+    return Intl.message(
+      'Avg. Temperature',
+      name: 'avgTemperature',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Avg. Rainfall`
+  String get avgRainfall {
+    return Intl.message(
+      'Avg. Rainfall',
+      name: 'avgRainfall',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<L10n> {

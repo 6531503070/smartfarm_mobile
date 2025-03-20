@@ -26,7 +26,7 @@ class App extends HookWidget {
         radius: 0.5,
       ),
 
-      home: const LoginPage(), // Starter-Page
+      home: const HomePage(), // Starter-Page
       routes: {
         '/login': (context) => const LoginPage(),
         '/home': (context) => const HomePage(),

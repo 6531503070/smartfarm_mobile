@@ -22,14 +22,19 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "controlPage": MessageLookupByLibrary.simpleMessage("หลักควบคุม"),
-        "dataPage": MessageLookupByLibrary.simpleMessage("หลักจัดการข้อมูล"),
+        "avgRainfall":
+            MessageLookupByLibrary.simpleMessage("ปริมาณน้ำฝนเฉลี่ย"),
+        "avgTemperature":
+            MessageLookupByLibrary.simpleMessage("อุณหภูมิเฉลี่ย"),
+        "controlPage": MessageLookupByLibrary.simpleMessage("หน้าควบคุม"),
+        "dataPage": MessageLookupByLibrary.simpleMessage("หน้าจัดการข้อมูล"),
         "email": MessageLookupByLibrary.simpleMessage("อีเมล"),
         "forgotPasswordOrContactUs":
             MessageLookupByLibrary.simpleMessage("ติดต่อเรา / ลืมรหัสผ่าน?"),
         "home": MessageLookupByLibrary.simpleMessage("หน้าหลัก"),
         "projectName": MessageLookupByLibrary.simpleMessage("การเกษตรอัจฉริยะ"),
         "signIn": MessageLookupByLibrary.simpleMessage("เข้าสู่ระบบ"),
+        "waterUsage": MessageLookupByLibrary.simpleMessage("การใช้น้ำ"),
         "welcomeSignIn": MessageLookupByLibrary.simpleMessage(
             "วันนี้คือวันใหม่ มันคือวันของคุณ คุณเป็นคนกำหนดมัน เข้าสู่ระบบเพื่อเริ่มต้นการจัดการฟาร์ม")
       };
