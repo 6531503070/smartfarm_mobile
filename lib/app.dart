@@ -26,7 +26,7 @@ class App extends HookWidget {
         radius: 0.5,
       ),
 
-      home: const DataPage(), // Starter-Page
+      home: const HomePage(), // Starter-Page
       routes: {
         '/login': (context) => const LoginPage(),
         '/home': (context) => const HomePage(),
@@ -34,7 +34,7 @@ class App extends HookWidget {
         '/control': (context) => const ControlPage(),
         '/contact': (context) => const ContactPage(),
       },
-
+      
       supportedLocales: const [
         Locale('en', 'EN'), // English
         Locale('th', 'TH'), // Thai

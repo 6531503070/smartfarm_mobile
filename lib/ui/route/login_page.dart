@@ -6,21 +6,7 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:smartfarm_mobile/gen/assets.gen.dart';
 import 'package:smartfarm_mobile/ui/hook/use_l10n.dart';
 import 'package:smartfarm_mobile/ui/theme/app_colors.dart';
-
-class EnglishAndEmailTextInputFormatter extends TextInputFormatter {
-  @override
-  TextEditingValue formatEditUpdate(
-    TextEditingValue oldValue, TextEditingValue newValue) {
-      final newText = newValue.text.replaceAll(RegExp(r'[^\w\s@.-]'), '');
-
-      // Ensure the cursor position is maintained correctly
-      final selectionIndex = newText.length;
-      return TextEditingValue(
-        text: newText,
-        selection: TextSelection.collapsed(offset: selectionIndex),
-      );
-  }
-}
+import 'package:smartfarm_mobile/util/login_manager.dart';
 
 class LoginPage extends StatefulHookWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -229,33 +215,6 @@ class _LoginState extends State<LoginPage> {
   }
 
   void _signIn() async {
-    if (!_formKey.currentState!.validate()) {
-      setState(() {
-        _isSigningIn = true;
-      });
-
-      setState(() {
-        _isSigningIn = false;
-      });
-    } else {
-      setState(() {
-        _isSigningIn = true;
-      });
-
-      String email = emailController.text;
-      String password = passwordController.text;
-
-      setState(() {
-        _isSigningIn = false;
-      });
-
-      bool isVerified = true;
-      if (isVerified) {
-        // showToast(message: "Sign in successfully");
-        // globalEmail = email; // Store email globally
-        // globalPassword = password; // Store password globally
-        Navigator.pushNamed(context, '/home');
-      }
-    }
+    Navigator.pushNamed(context, '/home');
   }
 }

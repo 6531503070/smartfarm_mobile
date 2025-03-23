@@ -1,4 +1,5 @@
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:smartfarm_mobile/ui/component/bottom_bar.dart';
 import 'package:smartfarm_mobile/ui/component/data_table.dart';
 import 'package:smartfarm_mobile/ui/component/top_bar.dart';
@@ -11,8 +12,8 @@ import 'package:flutter/material.dart' as material;
 import 'package:shadcn_flutter/shadcn_flutter.dart';
 
 class DataPage extends HookWidget {
-  const DataPage({Key? key}) : super(key: key);
-  
+  const DataPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     final l10n = useL10n();

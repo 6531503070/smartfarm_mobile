@@ -1,5 +1,6 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart' as material;
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 import 'package:shadcn_flutter/shadcn_flutter.dart';
 
@@ -13,13 +14,13 @@ import 'package:smartfarm_mobile/ui/theme/app_colors.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
 class HomePage extends HookWidget {
-  const HomePage({Key? key}) : super(key: key);
+  const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
     final l10n = useL10n();
     final colors = AppColors.light();
-  
+
     return Scaffold(
       headers: [
         TopBar(title: l10n.home)
