@@ -30,8 +30,6 @@ class CardInfo extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
-    final appFont = useValueListenable(Settings.appFont);
-    
     return Card(
       padding: const EdgeInsets.all(24),
       child: Column(
@@ -39,26 +37,23 @@ class CardInfo extends HookWidget {
         children: [
           Row(
             children: [
-              Text(metricName, style: appFont).x2Large().medium(),
+              Text(metricName).x2Large().medium(),
               Spacer(),
               metricIcon,
             ],
           ),
-
           SizedBox(
             width: double.maxFinite,
             height: 225,
             child: chartWidget,
           ),
-
           const SizedBox(height: 16),
-          Text(data, style: appFont).extraBold(),
-          
+          Text(data).extraBold(),
           Row(
             children: [
-              Text('Latest update ', style: appFont).muted().small().p(),
+              Text('Latest update ').muted().small().p(),
               Spacer(),
-              Text(latestUpdate, style: appFont).muted().small().p(),
+              Text(latestUpdate).muted().small().p(),
             ],
           ),
         ],

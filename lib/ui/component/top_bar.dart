@@ -31,7 +31,6 @@ class TopBar extends StatelessWidget implements PreferredSizeWidget {
         style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
       ),
       centerTitle: true,
-      
       leadingWidth: 160,
       leading: Row(
         mainAxisSize: MainAxisSize.min,
@@ -47,14 +46,12 @@ class TopBar extends StatelessWidget implements PreferredSizeWidget {
           ),
         ],
       ),
-      
       actions: [
         Padding(
           padding: const EdgeInsets.only(right: 4),
           child: IconButton(
             icon: Icon(Icons.language_sharp),
             onPressed: () {
-              
               showMenu(
                 context: context,
                 position: RelativeRect.fromLTRB(1, kToolbarHeight, 0, 0),
@@ -76,7 +73,7 @@ class TopBar extends StatelessWidget implements PreferredSizeWidget {
                 elevation: 8.0,
               ).then((selectedLocale) {
                 if (selectedLocale != null) {
-                  Settings.locale.value = selectedLocale;
+                  Settings.appLocalization.value = selectedLocale;
                 }
               });
             }, // language btn
@@ -86,30 +83,11 @@ class TopBar extends StatelessWidget implements PreferredSizeWidget {
           padding: const EdgeInsets.only(right: 8),
           child: IconButton(
             icon: Icon(Icons.notifications_sharp),
-            onPressed: () {
-              
-            }, // notification btn
+            onPressed: () {}, // notification btn
           ),
         ),
       ],
     );
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     // return shadcn.OutlinedContainer(
     //   clipBehavior: Clip.antiAliasWithSaveLayer,
@@ -138,8 +116,5 @@ class TopBar extends StatelessWidget implements PreferredSizeWidget {
     //     ],
     //   ),
     // );
-
-
-
   }
 }

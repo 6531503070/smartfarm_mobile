@@ -1,5 +1,6 @@
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:smartfarm_mobile/gen_l10n/l10n.dart';
 import 'package:smartfarm_mobile/ui/component/bottom_bar.dart';
 import 'package:smartfarm_mobile/ui/component/data_table.dart';
 import 'package:smartfarm_mobile/ui/component/top_bar.dart';
@@ -18,7 +19,6 @@ class DataPage extends HookWidget {
   Widget build(BuildContext context) {
     final l10n = useL10n();
     final appTheme = useValueListenable(Settings.appTheme);
-    final appFont = useValueListenable(Settings.appFont);
     final StepperController harvestController = StepperController();
     final StepperController pestDiseaseController = StepperController();
 
@@ -26,11 +26,9 @@ class DataPage extends HookWidget {
       headers: [
         TopBar(title: l10n.dataPage),
       ],
-
       footers: [
         BottomBar(currentIndex: 2),
       ],
-
       backgroundColor: appTheme.background,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -39,21 +37,20 @@ class DataPage extends HookWidget {
             padding: const EdgeInsets.all(16),
             child: ZoneSelector(),
           ),
-          
           Expanded(
             child: SingleChildScrollView(
               child: Padding(
-                padding: const EdgeInsets.all(16),
+                padding: EdgeInsets.all(16),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Text('Pest & Disease', style: appFont).extraBold().h4(),
+                    Text(l10n.yieldAndDisease).extraBold().h4(),
                     Stepper(
                       controller: pestDiseaseController,
                       direction: Axis.vertical,
                       steps: [
                         Step(
-                          title: const Text('Disease Detection'),
+                          title: Text(l10n.diseaseDetection),
                           icon: StepNumber(
                             onPressed: () {
                               pestDiseaseController.jumpToStep(0);
@@ -62,11 +59,11 @@ class DataPage extends HookWidget {
                           contentBuilder: (context) {
                             return StepContainer(
                               actions: [
-                                const SecondaryButton(
-                                  child: Text('Prev'),
+                                SecondaryButton(
+                                  child: Text(l10n.prev),
                                 ),
                                 PrimaryButton(
-                                    child: const Text('Next'),
+                                    child: Text(l10n.next),
                                     onPressed: () {
                                       pestDiseaseController.nextStep();
                                     }),
@@ -76,7 +73,7 @@ class DataPage extends HookWidget {
                           },
                         ),
                         Step(
-                          title: const Text('Pest Detection'),
+                          title: Text(l10n.yieldAndDisease),
                           icon: StepNumber(
                             onPressed: () {
                               pestDiseaseController.jumpToStep(1);
@@ -86,13 +83,13 @@ class DataPage extends HookWidget {
                             return StepContainer(
                               actions: [
                                 SecondaryButton(
-                                  child: const Text('Prev'),
+                                  child: Text(l10n.prev),
                                   onPressed: () {
                                     pestDiseaseController.previousStep();
                                   },
                                 ),
                                 PrimaryButton(
-                                    child: const Text('Next'),
+                                    child: Text(l10n.next),
                                     onPressed: () {
                                       pestDiseaseController.nextStep();
                                     }),
@@ -102,7 +99,7 @@ class DataPage extends HookWidget {
                           },
                         ),
                         Step(
-                          title: const Text('How it affects (Description)'),
+                          title: Text(l10n.howItAffects),
                           icon: StepNumber(
                             onPressed: () {
                               pestDiseaseController.jumpToStep(2);
@@ -112,13 +109,13 @@ class DataPage extends HookWidget {
                             return StepContainer(
                               actions: [
                                 SecondaryButton(
-                                  child: const Text('Prev'),
+                                  child: Text(l10n.prev),
                                   onPressed: () {
                                     pestDiseaseController.previousStep();
                                   },
                                 ),
                                 PrimaryButton(
-                                    child: const Text('Finish'),
+                                    child: Text(l10n.finish),
                                     onPressed: () {
                                       pestDiseaseController.nextStep();
                                     }),
@@ -129,17 +126,15 @@ class DataPage extends HookWidget {
                         ),
                       ],
                     ),
-                    
                     Divider(),
-                    const SizedBox(height: 8),
-                    
-                    Text('Harvest', style: appFont).extraBold().h4(),
+                    SizedBox(height: 8),
+                    Text(l10n.harvest).extraBold().h4(),
                     Stepper(
                       controller: harvestController,
                       direction: Axis.vertical,
                       steps: [
                         Step(
-                          title: const Text('Size'),
+                          title: Text(l10n.size),
                           icon: StepNumber(
                             onPressed: () {
                               harvestController.jumpToStep(0);
@@ -148,11 +143,11 @@ class DataPage extends HookWidget {
                           contentBuilder: (context) {
                             return StepContainer(
                               actions: [
-                                const SecondaryButton(
-                                  child: Text('Prev'),
+                                SecondaryButton(
+                                  child: Text(l10n.prev),
                                 ),
                                 PrimaryButton(
-                                    child: const Text('Next'),
+                                    child: Text(l10n.next),
                                     onPressed: () {
                                       harvestController.nextStep();
                                     }),
@@ -162,7 +157,7 @@ class DataPage extends HookWidget {
                           },
                         ),
                         Step(
-                          title: const Text('Quality'),
+                          title: Text(l10n.waterUsage),
                           icon: StepNumber(
                             onPressed: () {
                               harvestController.jumpToStep(1);
@@ -172,13 +167,13 @@ class DataPage extends HookWidget {
                             return StepContainer(
                               actions: [
                                 SecondaryButton(
-                                  child: const Text('Prev'),
+                                  child: Text(l10n.prev),
                                   onPressed: () {
                                     harvestController.previousStep();
                                   },
                                 ),
                                 PrimaryButton(
-                                    child: const Text('Next'),
+                                    child: Text(l10n.next),
                                     onPressed: () {
                                       harvestController.nextStep();
                                     }),
@@ -188,7 +183,7 @@ class DataPage extends HookWidget {
                           },
                         ),
                         Step(
-                          title: const Text('Produce Amount (Per Tree)'),
+                          title: Text(l10n.produceAmount),
                           icon: StepNumber(
                             onPressed: () {
                               harvestController.jumpToStep(2);
@@ -198,13 +193,13 @@ class DataPage extends HookWidget {
                             return StepContainer(
                               actions: [
                                 SecondaryButton(
-                                  child: const Text('Prev'),
+                                  child: Text(l10n.prev),
                                   onPressed: () {
                                     harvestController.previousStep();
                                   },
                                 ),
                                 PrimaryButton(
-                                    child: const Text('Finish'),
+                                    child: Text(l10n.finish),
                                     onPressed: () {
                                       harvestController.nextStep();
                                     }),
@@ -215,18 +210,14 @@ class DataPage extends HookWidget {
                         ),
                       ],
                     ),
-
                     Divider(),
-                    const SizedBox(height: 16),
-
+                    SizedBox(height: 16),
                     DataTable(),
-
-                    const SizedBox(height: 16),
-
+                    SizedBox(height: 16),
                     PrimaryButton(
                       size: ButtonSize(1.15),
                       onPressed: () {},
-                      child: Text('Export to local (Excel file .xlsx)', style: appFont).semiBold(),
+                      child: Text(l10n.exportToLocal).semiBold(),
                     ),
                   ],
                 ),

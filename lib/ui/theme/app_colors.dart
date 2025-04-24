@@ -5,7 +5,6 @@ class AppColors {
     required this.topBar,
     required this.background,
     required this.bottomBar,
-
     required this.accent,
     required this.disabled,
     required this.error,
@@ -19,7 +18,6 @@ class AppColors {
       topBar: Color(0xffAAB99A),
       background: Color(0xffF0F0D7),
       bottomBar: Color(0xffD0DDD0),
-
       accent: Color(0xffAAB99A),
       disabled: Colors.black12,
       error: Color(0xffff7466),

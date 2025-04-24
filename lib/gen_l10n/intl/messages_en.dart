@@ -22,19 +22,50 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "add": MessageLookupByLibrary.simpleMessage("Add"),
         "avgRainfall": MessageLookupByLibrary.simpleMessage("Avg. Rainfall"),
         "avgTemperature":
             MessageLookupByLibrary.simpleMessage("Avg. Temperature"),
         "controlPage": MessageLookupByLibrary.simpleMessage("IOT Controls"),
         "dataPage": MessageLookupByLibrary.simpleMessage("Data Management"),
+        "diseaseDetection":
+            MessageLookupByLibrary.simpleMessage("Disease Detection"),
         "email": MessageLookupByLibrary.simpleMessage("Email"),
+        "exportToLocal": MessageLookupByLibrary.simpleMessage(
+            "Export to local (Excel file .xlsx)"),
+        "finish": MessageLookupByLibrary.simpleMessage("Finish"),
         "forgotPasswordOrContactUs": MessageLookupByLibrary.simpleMessage(
             "Contact us / Forgot password?"),
+        "from": MessageLookupByLibrary.simpleMessage("From"),
+        "harvest": MessageLookupByLibrary.simpleMessage("Harvest"),
         "home": MessageLookupByLibrary.simpleMessage("Home"),
+        "howItAffects": MessageLookupByLibrary.simpleMessage(
+            "How it affects (Description)"),
+        "humidity": MessageLookupByLibrary.simpleMessage("Humidity"),
+        "next": MessageLookupByLibrary.simpleMessage("Next"),
+        "notRaining": MessageLookupByLibrary.simpleMessage("Not raining"),
+        "prev": MessageLookupByLibrary.simpleMessage("Prev"),
+        "produceAmount":
+            MessageLookupByLibrary.simpleMessage("Produce Amount (Per Tree)"),
         "projectName": MessageLookupByLibrary.simpleMessage("Smart Farming"),
+        "raining": MessageLookupByLibrary.simpleMessage("Raining"),
+        "showSeconds": MessageLookupByLibrary.simpleMessage("Show Seconds"),
         "signIn": MessageLookupByLibrary.simpleMessage("Sign In"),
+        "size": MessageLookupByLibrary.simpleMessage("Size"),
+        "soilMoisture": MessageLookupByLibrary.simpleMessage("Soil Moisture"),
+        "start": MessageLookupByLibrary.simpleMessage("Start"),
+        "stop": MessageLookupByLibrary.simpleMessage("Stop"),
+        "temperature": MessageLookupByLibrary.simpleMessage("Temperature"),
+        "to": MessageLookupByLibrary.simpleMessage("To"),
         "waterUsage": MessageLookupByLibrary.simpleMessage("Water Usage"),
+        "watering": MessageLookupByLibrary.simpleMessage("Watering"),
+        "wateringSchedule":
+            MessageLookupByLibrary.simpleMessage("Watering Schedule"),
         "welcomeSignIn": MessageLookupByLibrary.simpleMessage(
-            "Today is a new day. It\'s your day. You shape it. Sign in to start managing farm.")
+            "Today is a new day. It\'s your day. You shape it. Sign in to start managing farm."),
+        "yieldAndDisease":
+            MessageLookupByLibrary.simpleMessage("Yield & Disease"),
+        "yieldDetection":
+            MessageLookupByLibrary.simpleMessage("Yield Detection")
       };
 }

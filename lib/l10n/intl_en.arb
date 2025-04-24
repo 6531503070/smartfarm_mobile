@@ -1,6 +1,6 @@
 {
   "@@locale": "en",
-  
+
   "projectName": "Smart Farming",
   "signIn": "Sign In",
   "forgotPasswordOrContactUs": "Contact us / Forgot password?",
@@ -13,5 +13,31 @@
 
   "waterUsage": "Water Usage",
   "avgTemperature": "Avg. Temperature",
-  "avgRainfall": "Avg. Rainfall"
+  "avgRainfall": "Avg. Rainfall",
+
+  "yieldAndDisease": "Yield & Disease",
+  "diseaseDetection": "Disease Detection",
+  "prev": "Prev",
+  "next": "Next",
+  "yieldDetection": "Yield Detection",
+  "howItAffects": "How it affects (Description)",
+  "finish": "Finish",
+  "harvest": "Harvest",
+  "size": "Size",
+  "produceAmount": "Produce Amount (Per Tree)",
+  "exportToLocal": "Export to local (Excel file .xlsx)",
+
+  "soilMoisture": "Soil Moisture",
+  "humidity": "Humidity",
+  "temperature": "Temperature",
+  "watering": "Watering",
+  "wateringSchedule": "Watering Schedule",
+  "raining": "Raining",
+  "notRaining": "Not raining",
+  "from": "From",
+  "to": "To",
+  "add": "Add",
+  "showSeconds": "Show Seconds",
+  "start": "Start",
+  "stop": "Stop"
 }

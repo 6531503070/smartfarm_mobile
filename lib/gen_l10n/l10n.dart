@@ -159,6 +159,246 @@ class L10n {
       args: [],
     );
   }
+
+  /// `Yield & Disease`
+  String get yieldAndDisease {
+    return Intl.message(
+      'Yield & Disease',
+      name: 'yieldAndDisease',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Disease Detection`
+  String get diseaseDetection {
+    return Intl.message(
+      'Disease Detection',
+      name: 'diseaseDetection',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Prev`
+  String get prev {
+    return Intl.message(
+      'Prev',
+      name: 'prev',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Next`
+  String get next {
+    return Intl.message(
+      'Next',
+      name: 'next',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Yield Detection`
+  String get yieldDetection {
+    return Intl.message(
+      'Yield Detection',
+      name: 'yieldDetection',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `How it affects (Description)`
+  String get howItAffects {
+    return Intl.message(
+      'How it affects (Description)',
+      name: 'howItAffects',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Finish`
+  String get finish {
+    return Intl.message(
+      'Finish',
+      name: 'finish',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Harvest`
+  String get harvest {
+    return Intl.message(
+      'Harvest',
+      name: 'harvest',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Size`
+  String get size {
+    return Intl.message(
+      'Size',
+      name: 'size',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Produce Amount (Per Tree)`
+  String get produceAmount {
+    return Intl.message(
+      'Produce Amount (Per Tree)',
+      name: 'produceAmount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Export to local (Excel file .xlsx)`
+  String get exportToLocal {
+    return Intl.message(
+      'Export to local (Excel file .xlsx)',
+      name: 'exportToLocal',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Soil Moisture`
+  String get soilMoisture {
+    return Intl.message(
+      'Soil Moisture',
+      name: 'soilMoisture',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Humidity`
+  String get humidity {
+    return Intl.message(
+      'Humidity',
+      name: 'humidity',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Temperature`
+  String get temperature {
+    return Intl.message(
+      'Temperature',
+      name: 'temperature',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Watering`
+  String get watering {
+    return Intl.message(
+      'Watering',
+      name: 'watering',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Watering Schedule`
+  String get wateringSchedule {
+    return Intl.message(
+      'Watering Schedule',
+      name: 'wateringSchedule',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Raining`
+  String get raining {
+    return Intl.message(
+      'Raining',
+      name: 'raining',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Not raining`
+  String get notRaining {
+    return Intl.message(
+      'Not raining',
+      name: 'notRaining',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `From`
+  String get from {
+    return Intl.message(
+      'From',
+      name: 'from',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `To`
+  String get to {
+    return Intl.message(
+      'To',
+      name: 'to',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add`
+  String get add {
+    return Intl.message(
+      'Add',
+      name: 'add',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Show Seconds`
+  String get showSeconds {
+    return Intl.message(
+      'Show Seconds',
+      name: 'showSeconds',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Start`
+  String get start {
+    return Intl.message(
+      'Start',
+      name: 'start',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Stop`
+  String get stop {
+    return Intl.message(
+      'Stop',
+      name: 'stop',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<L10n> {

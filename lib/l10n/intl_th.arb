@@ -13,5 +13,31 @@
 
   "waterUsage": "การใช้น้ำ",
   "avgTemperature": "อุณหภูมิเฉลี่ย",
-  "avgRainfall": "ปริมาณน้ำฝนเฉลี่ย"
+  "avgRainfall": "ปริมาณน้ำฝนเฉลี่ย",
+
+  "yieldAndDisease": "ผลผลิต และ โรค",
+  "diseaseDetection": "การวินิจฉัยโรค",
+  "prev": "ย้อนกลับ",
+  "next": "ถัดไป",
+  "yieldDetection": "ตรวจสอบปริมาณผลผลิต",
+  "howItAffects": "ผลกระทบ (อธิบาย)",
+  "finish": "เสร็จสิ้น",
+  "harvest": "การเก็บเกี่ยว",
+  "size": "ขนาด",
+  "produceAmount": "จำนวนผลผลิต (ต่อต้น)",
+  "exportToLocal": "พิมพ์ (Excel file .xlsx)",
+
+  "soilMoisture": "ความชื้นในดิน",
+  "humidity": "ความชื้น",
+  "temperature": "อุณหภูมิ",
+  "watering": "การรดน้ำ",
+  "wateringSchedule": "ตารางเวลารดน้ำ",
+  "raining": "ฝนตก",
+  "notRaining": "ไม่มีฝนตก",
+  "from": "จาก",
+  "to": "ถึง",
+  "add": "เพิ่ม",
+  "showSeconds": "แสดงวินาที",
+  "start": "เริ่ม",
+  "stop": "หยุด"
 }

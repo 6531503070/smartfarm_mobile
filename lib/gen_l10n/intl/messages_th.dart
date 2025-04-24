@@ -22,20 +22,51 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "add": MessageLookupByLibrary.simpleMessage("เพิ่ม"),
         "avgRainfall":
             MessageLookupByLibrary.simpleMessage("ปริมาณน้ำฝนเฉลี่ย"),
         "avgTemperature":
             MessageLookupByLibrary.simpleMessage("อุณหภูมิเฉลี่ย"),
         "controlPage": MessageLookupByLibrary.simpleMessage("หน้าควบคุม"),
         "dataPage": MessageLookupByLibrary.simpleMessage("หน้าจัดการข้อมูล"),
+        "diseaseDetection":
+            MessageLookupByLibrary.simpleMessage("การวินิจฉัยโรค"),
         "email": MessageLookupByLibrary.simpleMessage("อีเมล"),
+        "exportToLocal":
+            MessageLookupByLibrary.simpleMessage("พิมพ์ (Excel file .xlsx)"),
+        "finish": MessageLookupByLibrary.simpleMessage("เสร็จสิ้น"),
         "forgotPasswordOrContactUs":
             MessageLookupByLibrary.simpleMessage("ติดต่อเรา / ลืมรหัสผ่าน?"),
+        "from": MessageLookupByLibrary.simpleMessage("จาก"),
+        "harvest": MessageLookupByLibrary.simpleMessage("การเก็บเกี่ยว"),
         "home": MessageLookupByLibrary.simpleMessage("หน้าหลัก"),
+        "howItAffects":
+            MessageLookupByLibrary.simpleMessage("ผลกระทบ (อธิบาย)"),
+        "humidity": MessageLookupByLibrary.simpleMessage("ความชื้น"),
+        "next": MessageLookupByLibrary.simpleMessage("ถัดไป"),
+        "notRaining": MessageLookupByLibrary.simpleMessage("ไม่มีฝนตก"),
+        "prev": MessageLookupByLibrary.simpleMessage("ย้อนกลับ"),
+        "produceAmount":
+            MessageLookupByLibrary.simpleMessage("จำนวนผลผลิต (ต่อต้น)"),
         "projectName": MessageLookupByLibrary.simpleMessage("การเกษตรอัจฉริยะ"),
+        "raining": MessageLookupByLibrary.simpleMessage("ฝนตก"),
+        "showSeconds": MessageLookupByLibrary.simpleMessage("แสดงวินาที"),
         "signIn": MessageLookupByLibrary.simpleMessage("เข้าสู่ระบบ"),
+        "size": MessageLookupByLibrary.simpleMessage("ขนาด"),
+        "soilMoisture": MessageLookupByLibrary.simpleMessage("ความชื้นในดิน"),
+        "start": MessageLookupByLibrary.simpleMessage("เริ่ม"),
+        "stop": MessageLookupByLibrary.simpleMessage("หยุด"),
+        "temperature": MessageLookupByLibrary.simpleMessage("อุณหภูมิ"),
+        "to": MessageLookupByLibrary.simpleMessage("ถึง"),
         "waterUsage": MessageLookupByLibrary.simpleMessage("การใช้น้ำ"),
+        "watering": MessageLookupByLibrary.simpleMessage("การรดน้ำ"),
+        "wateringSchedule":
+            MessageLookupByLibrary.simpleMessage("ตารางเวลารดน้ำ"),
         "welcomeSignIn": MessageLookupByLibrary.simpleMessage(
-            "วันนี้คือวันใหม่ มันคือวันของคุณ คุณเป็นคนกำหนดมัน เข้าสู่ระบบเพื่อเริ่มต้นการจัดการฟาร์ม")
+            "วันนี้คือวันใหม่ มันคือวันของคุณ คุณเป็นคนกำหนดมัน เข้าสู่ระบบเพื่อเริ่มต้นการจัดการฟาร์ม"),
+        "yieldAndDisease":
+            MessageLookupByLibrary.simpleMessage("ผลผลิต และ โรค"),
+        "yieldDetection":
+            MessageLookupByLibrary.simpleMessage("ตรวจสอบปริมาณผลผลิต")
       };
 }

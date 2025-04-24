@@ -15,18 +15,20 @@ class App extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
-    final currentLocale = useValueListenable(Settings.locale);
+    final currentLocale = useValueListenable(Settings.appLocalization);
     final currentAppTheme = useValueListenable(Settings.appTheme);
+    final currentAppTypography = useValueListenable(Settings.appTypography);
 
     return ShadcnApp(
       locale: currentLocale,
       title: 'Doitung Smart Farming',
       theme: ThemeData(
         colorScheme: currentAppTheme,
-        radius: 0.5,
+        typography: currentAppTypography,
+        radius: 0.4,
       ),
 
-      home: const HomePage(), // Starter-Page
+      home: ControlPage(), // Starter-Page
       routes: {
         '/login': (context) => const LoginPage(),
         '/home': (context) => const HomePage(),
@@ -34,13 +36,13 @@ class App extends HookWidget {
         '/control': (context) => const ControlPage(),
         '/contact': (context) => const ContactPage(),
       },
-      
+
       supportedLocales: const [
         Locale('en', 'EN'), // English
         Locale('th', 'TH'), // Thai
         Locale('my', 'MY'), // Myanmar
       ],
-      
+
       localizationsDelegates: const [
         AppLocalizationDelegate(),
         GlobalMaterialLocalizations.delegate,
