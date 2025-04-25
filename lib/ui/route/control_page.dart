@@ -192,20 +192,20 @@ class ControlPage extends HookWidget {
                             ],
                           ),
                           SizedBox(height: 16),
-                          TextField(
-                            initialValue: soilMoistureTriggering.toString(),
-                            // onChanged: (value) {
-                            //   setState(() {
-                            //     this.value = double.tryParse(value) ?? 0;
-                            //   });
-                            // },
-                            // features: const [
-                            //   InputFeature.spinner(),
-                            // ],
-                            // submitFormatters: [
-                            //   TextInputFormatters.mathExpression(),
-                            // ],
-                          ),
+                          // TextField(
+                          //   initialValue: soilMoistureTriggering.toString(),
+                          //   // onChanged: (value) {
+                          //   //   setState(() {
+                          //   //     this.value = double.tryParse(value) ?? 0;
+                          //   //   });
+                          //   // },
+                          //   // features: const [
+                          //   //   InputFeature.spinner(),
+                          //   // ],
+                          //   // submitFormatters: [
+                          //   //   TextInputFormatters.mathExpression(),
+                          //   // ],
+                          // ),
                           SizedBox(height: 16),
                           Divider(thickness: 2),
                           SizedBox(height: 16),
