@@ -50,12 +50,13 @@ class Settings {
   // App Theme
   static final listOfAppTheme = [
     ColorSchemes.lightGreen().copyWith(
-      // Modify
-      background: const Color(0xffF0F0D7),
-      // secondary: const Color.fromARGB(255, 222, 236, 199),
-    ), // Lightmode
+        // @Override
+        // background: const Color(0xffF0F0D7),
+        // secondary: const Color.fromARGB(255, 222, 236, 199),
+
+        ), // Lightmode
     ColorSchemes.darkGreen().copyWith(
-        // Modify
+        // @Override
 
         ), // Darkmode
   ];

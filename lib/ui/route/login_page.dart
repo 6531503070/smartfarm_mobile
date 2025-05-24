@@ -10,7 +10,7 @@ import 'package:smartfarm_mobile/util/login_manager.dart';
 
 class LoginPage extends StatefulHookWidget {
   const LoginPage({Key? key}) : super(key: key);
-  
+
   @override
   State<LoginPage> createState() => _LoginState();
 }
@@ -22,7 +22,7 @@ class _LoginState extends State<LoginPage> {
   bool _isPasswordVisible = false;
   bool _rememberMe = false;
   bool _isSigningIn = false;
-  
+
   @override
   void dispose() {
     emailController.dispose();
@@ -30,8 +30,9 @@ class _LoginState extends State<LoginPage> {
     super.dispose();
   }
 
-  final GlobalKey<material.FormState> _formKey = GlobalKey<material.FormState>();
-  
+  final GlobalKey<material.FormState> _formKey =
+      GlobalKey<material.FormState>();
+
   @override
   Widget build(BuildContext context) {
     final l10n = useL10n();
@@ -40,12 +41,11 @@ class _LoginState extends State<LoginPage> {
     return Scaffold(
       headers: [
         AppBar(
+          height: 0,
           title: Text(""),
         ),
       ],
-      
       footers: [],
-      
       child: Form(
         key: _formKey,
         child: Center(
@@ -60,7 +60,6 @@ class _LoginState extends State<LoginPage> {
                     image: Assets.images.logo.provider(),
                     height: 100,
                   ),
-                  
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 16.0),
                     child: Text(
@@ -68,9 +67,7 @@ class _LoginState extends State<LoginPage> {
                       style: material.Theme.of(context).textTheme.headlineSmall,
                     ),
                   ),
-
                   SizedBox(height: 60),
-                  
                   Padding(
                     padding: const EdgeInsets.only(top: 8.0),
                     child: Text(
@@ -79,9 +76,7 @@ class _LoginState extends State<LoginPage> {
                       textAlign: TextAlign.left,
                     ),
                   ),
-                  
                   SizedBox(height: 16),
-                  
                   material.TextFormField(
                     controller: emailController,
                     keyboardType: TextInputType.text,
@@ -91,8 +86,10 @@ class _LoginState extends State<LoginPage> {
                       if (value == null || value.isEmpty) {
                         return 'Please enter some text';
                       }
-                      
-                      bool emailValid = RegExp(r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+").hasMatch(value);
+
+                      bool emailValid = RegExp(
+                              r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+                          .hasMatch(value);
                       if (!emailValid) {
                         return 'Please enter a valid email';
                       }
@@ -107,7 +104,6 @@ class _LoginState extends State<LoginPage> {
                     ),
                   ),
                   SizedBox(height: 16),
-                  
                   material.TextFormField(
                     controller: passwordController,
                     validator: (value) {
@@ -137,9 +133,7 @@ class _LoginState extends State<LoginPage> {
                           },
                         )),
                   ),
-
                   SizedBox(height: 16),
-
                   Row(mainAxisAlignment: MainAxisAlignment.end, children: [
                     GestureDetector(
                         onTap: () {
@@ -150,30 +144,24 @@ class _LoginState extends State<LoginPage> {
                           style: TextStyle(color: colors.accent),
                         )),
                   ]),
-                  
                   SizedBox(height: 16),
                   SizedBox(height: 16),
-                   
                   SizedBox(
                     width: double.infinity,
                     child: DecoratedBox(
                       decoration: BoxDecoration(
-                        gradient: LinearGradient(
-                          colors: [
+                          gradient: LinearGradient(colors: [
                             colors.signIn,
                             colors.signIn,
-                          ]
-                        ),
-                        borderRadius: BorderRadius.circular(5),
-                        boxShadow: <BoxShadow>[
-                          BoxShadow(
-                              color: material.Colors.grey.withOpacity(0.7),
-                              blurRadius: 5,
-                              offset: Offset(3, 3),
-                              spreadRadius: 3)
-                        ]
-                      ),
-                      
+                          ]),
+                          borderRadius: BorderRadius.circular(5),
+                          boxShadow: <BoxShadow>[
+                            BoxShadow(
+                                color: material.Colors.grey.withOpacity(0.7),
+                                blurRadius: 5,
+                                offset: Offset(3, 3),
+                                spreadRadius: 3)
+                          ]),
                       child: material.ElevatedButton(
                         onPressed: _signIn,
                         style: material.ElevatedButton.styleFrom(
@@ -187,7 +175,6 @@ class _LoginState extends State<LoginPage> {
                               Colors.transparent.withOpacity(0.12),
                           shadowColor: Colors.transparent,
                         ),
-                        
                         child: Padding(
                           padding: EdgeInsets.all(10.0),
                           child: _isSigningIn

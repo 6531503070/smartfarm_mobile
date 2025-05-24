@@ -15,10 +15,10 @@ class AppColors {
 
   factory AppColors.light() {
     return const AppColors(
-      topBar: Color(0xffAAB99A),
-      background: Color(0xffF0F0D7),
-      bottomBar: Color(0xffD0DDD0),
-      accent: Color(0xffAAB99A),
+      topBar: Color(0xffFFFFFF),
+      background: Color(0xffF9F9F9),
+      bottomBar: Color(0xffEFEFEF),
+      accent: Color(0xffBBBBBB),
       disabled: Colors.black12,
       error: Color(0xffff7466),
       divider: Colors.black54,
