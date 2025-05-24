@@ -6,7 +6,7 @@ import 'package:smartfarm_mobile/ui/settings.dart';
 
 class DataTable extends HookWidget {
   const DataTable({Key? key}) : super(key: key);
-  
+
   TableCell buildHeaderCell(String text, [bool alignRight = false]) {
     return TableCell(
       child: Container(
@@ -33,87 +33,66 @@ class DataTable extends HookWidget {
       rows: [
         TableRow(
           cells: [
-            buildHeaderCell('Invoice'),
+            buildHeaderCell('Zone'),
             buildHeaderCell('Status'),
-            buildHeaderCell('Method'),
-            buildHeaderCell('Amount', true),
+            buildHeaderCell('Overall Yield'),
+            buildHeaderCell('Size/Grade'),
           ],
         ),
         TableRow(
           cells: [
-            buildCell('INV001'),
-            buildCell('Paid'),
-            buildCell('Credit Card'),
-            buildCell('\$250.00', true),
+            buildCell('Zone 1'),
+            buildCell('Growing'),
+            buildCell('High'),
+            buildCell('Large/A'),
           ],
         ),
         TableRow(
           cells: [
-            buildCell('INV002'),
-            buildCell('Pending'),
-            buildCell('PayPal'),
-            buildCell('\$150.00', true),
+            buildCell('Zone 2'),
+            buildCell('Seeding'),
+            buildCell('Medium'),
+            buildCell('Medium/B'),
           ],
         ),
         TableRow(
           cells: [
-            buildCell('INV003'),
-            buildCell('Unpaid'),
-            buildCell('Bank Transfer'),
-            buildCell('\$350.00', true),
+            buildCell('Zone 1'),
+            buildCell('Harvesting'),
+            buildCell('High'),
+            buildCell('Large/A'),
           ],
         ),
         TableRow(
           cells: [
-            buildCell('INV004'),
-            buildCell('Paid'),
-            buildCell('Credit Card'),
-            buildCell('\$450.00', true),
+            buildCell('Zone 3'),
+            buildCell('Shipped'),
+            buildCell('Low'),
+            buildCell('Small/C'),
           ],
         ),
         TableRow(
           cells: [
-            buildCell('INV005'),
-            buildCell('Paid'),
-            buildCell('PayPal'),
-            buildCell('\$550.00', true),
+            buildCell('Zone 2'),
+            buildCell('Spoiled'),
+            buildCell('N/A'),
+            buildCell('N/A'),
           ],
         ),
         TableRow(
           cells: [
-            buildCell('INV006'),
-            buildCell('Pending'),
-            buildCell('Bank Transfer'),
-            buildCell('\$200.00', true),
+            buildCell('Zone 1'),
+            buildCell('Growing'),
+            buildCell('Medium'),
+            buildCell('Medium/B'),
           ],
         ),
         TableRow(
           cells: [
-            buildCell('INV007'),
-            buildCell('Unpaid'),
-            buildCell('Credit Card'),
-            buildCell('\$300.00', true),
-          ],
-        ),
-        TableFooter(
-          cells: [
-            TableCell(
-              columnSpan: 4,
-              child: Container(
-                padding: const EdgeInsets.all(8),
-                child: Row(
-                  children: [
-                    Text('Total'),
-                    Expanded(
-                      child: Align(
-                        alignment: Alignment.centerRight,
-                        child: Text('\$2,300.00').semiBold(),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
+            buildCell('Zone 1'),
+            buildCell('Harvesting'),
+            buildCell('High'),
+            buildCell('Large/A'),
           ],
         ),
       ],

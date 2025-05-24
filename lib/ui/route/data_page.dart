@@ -22,6 +22,9 @@ class DataPage extends HookWidget {
     final StepperController harvestController = StepperController();
     final StepperController pestDiseaseController = StepperController();
 
+    double value = 0;
+    String? selectedValue;
+
     return Scaffold(
       headers: [
         TopBar(title: l10n.dataPage),
@@ -44,176 +47,137 @@ class DataPage extends HookWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Text(l10n.yieldAndDisease).extraBold().h4(),
-                    Stepper(
-                      controller: pestDiseaseController,
-                      direction: Axis.vertical,
-                      steps: [
-                        Step(
-                          title: Text(l10n.diseaseDetection),
-                          icon: StepNumber(
-                            onPressed: () {
-                              pestDiseaseController.jumpToStep(0);
-                            },
-                          ),
-                          contentBuilder: (context) {
-                            return StepContainer(
-                              actions: [
-                                SecondaryButton(
-                                  child: Text(l10n.prev),
-                                ),
-                                PrimaryButton(
-                                    child: Text(l10n.next),
-                                    onPressed: () {
-                                      pestDiseaseController.nextStep();
-                                    }),
-                              ],
-                              child: SizedBox(),
-                            );
-                          },
-                        ),
-                        Step(
-                          title: Text(l10n.yieldAndDisease),
-                          icon: StepNumber(
-                            onPressed: () {
-                              pestDiseaseController.jumpToStep(1);
-                            },
-                          ),
-                          contentBuilder: (context) {
-                            return StepContainer(
-                              actions: [
-                                SecondaryButton(
-                                  child: Text(l10n.prev),
-                                  onPressed: () {
-                                    pestDiseaseController.previousStep();
-                                  },
-                                ),
-                                PrimaryButton(
-                                    child: Text(l10n.next),
-                                    onPressed: () {
-                                      pestDiseaseController.nextStep();
-                                    }),
-                              ],
-                              child: SizedBox(),
-                            );
-                          },
-                        ),
-                        Step(
-                          title: Text(l10n.howItAffects),
-                          icon: StepNumber(
-                            onPressed: () {
-                              pestDiseaseController.jumpToStep(2);
-                            },
-                          ),
-                          contentBuilder: (context) {
-                            return StepContainer(
-                              actions: [
-                                SecondaryButton(
-                                  child: Text(l10n.prev),
-                                  onPressed: () {
-                                    pestDiseaseController.previousStep();
-                                  },
-                                ),
-                                PrimaryButton(
-                                    child: Text(l10n.finish),
-                                    onPressed: () {
-                                      pestDiseaseController.nextStep();
-                                    }),
-                              ],
-                              child: SizedBox(),
-                            );
-                          },
-                        ),
-                      ],
+                    //______________________________________________________
+                    Divider(
+                      child: Text("ส่วนการเพาะปลูก").extraBold().h4(),
                     ),
-                    Divider(),
+
                     SizedBox(height: 8),
-                    Text(l10n.harvest).extraBold().h4(),
-                    Stepper(
-                      controller: harvestController,
-                      direction: Axis.vertical,
-                      steps: [
-                        Step(
-                          title: Text(l10n.size),
-                          icon: StepNumber(
-                            onPressed: () {
-                              harvestController.jumpToStep(0);
-                            },
+
+                    // Input Query ()
+                    //
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text("สภาพไม้ (จำนวนต่อโซน)"),
+                        SizedBox(
+                          width: 128,
+                          child: NumberInput(
+                            showButtons: true,
+                            initialValue: value,
+                            onChanged: (value) {},
                           ),
-                          contentBuilder: (context) {
-                            return StepContainer(
-                              actions: [
-                                SecondaryButton(
-                                  child: Text(l10n.prev),
-                                ),
-                                PrimaryButton(
-                                    child: Text(l10n.next),
-                                    onPressed: () {
-                                      harvestController.nextStep();
-                                    }),
-                              ],
-                              child: SizedBox(),
-                            );
-                          },
-                        ),
-                        Step(
-                          title: Text(l10n.waterUsage),
-                          icon: StepNumber(
-                            onPressed: () {
-                              harvestController.jumpToStep(1);
-                            },
-                          ),
-                          contentBuilder: (context) {
-                            return StepContainer(
-                              actions: [
-                                SecondaryButton(
-                                  child: Text(l10n.prev),
-                                  onPressed: () {
-                                    harvestController.previousStep();
-                                  },
-                                ),
-                                PrimaryButton(
-                                    child: Text(l10n.next),
-                                    onPressed: () {
-                                      harvestController.nextStep();
-                                    }),
-                              ],
-                              child: SizedBox(),
-                            );
-                          },
-                        ),
-                        Step(
-                          title: Text(l10n.produceAmount),
-                          icon: StepNumber(
-                            onPressed: () {
-                              harvestController.jumpToStep(2);
-                            },
-                          ),
-                          contentBuilder: (context) {
-                            return StepContainer(
-                              actions: [
-                                SecondaryButton(
-                                  child: Text(l10n.prev),
-                                  onPressed: () {
-                                    harvestController.previousStep();
-                                  },
-                                ),
-                                PrimaryButton(
-                                    child: Text(l10n.finish),
-                                    onPressed: () {
-                                      harvestController.nextStep();
-                                    }),
-                              ],
-                              child: SizedBox(),
-                            );
-                          },
                         ),
                       ],
                     ),
-                    Divider(),
+
+                    SizedBox(height: 8),
+
+                    // Input Query
+                    //
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text("อัตราการงอก (จำนวนต่อโซน)"),
+                        SizedBox(
+                          width: 128,
+                          child: NumberInput(
+                            showButtons: true,
+                            initialValue: value,
+                            onChanged: (value) {},
+                          ),
+                        ),
+                      ],
+                    ),
+
+                    SizedBox(height: 8),
+
+                    // Input Query
+                    //
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text("ระบบน้ำที่ใช้ (รูปแบบ)"),
+                        SizedBox(
+                          width: 128,
+                          child: Select(
+                            itemBuilder: (context, item) {
+                              return Text(item);
+                            },
+                            onChanged: (value) {},
+                            value: selectedValue,
+                            placeholder: const Text('รูปแบบ'),
+                            popupConstraints: const BoxConstraints(
+                              maxHeight: 300,
+                              maxWidth: 200,
+                            ),
+                            popupWidthConstraint: PopoverConstraint.flexible,
+                            children: [
+                              SelectItemButton(
+                                value: 'หยด',
+                                child: Text('หยด'),
+                              ),
+                              SelectItemButton(
+                                value: 'พ่นหมอก',
+                                child: Text('พ่นหมอก'),
+                              ),
+                              SelectItemButton(
+                                value: 'รดมือ',
+                                child: Text('รดมือ'),
+                              ),
+                            ],
+                          ),
+                        )
+                      ],
+                    ),
+
+                    SizedBox(height: 8),
+
+                    // Input Query (tdlr)
+                    //
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Text("หมายเหตุ"),
+                        SizedBox(height: 8),
+                        SizedBox(
+                          width: MediaQuery.of(context).size.width *
+                              0.8, // 80% of width
+                          child: TextArea(
+                            initialValue: '',
+                            placeholder: Text(
+                                "- จำนวนศัตรูพืชที่พบ (เพลี้ย, หนอน, เชื้อรา ฯลฯ)"),
+                            expandableHeight: true,
+                          ),
+                        ),
+                      ],
+                    ),
+
+                    SizedBox(height: 8),
+
+                    //______________________________________________________
+
+                    //______________________________________________________
+                    Divider(
+                      child: Text("ส่วนการเก็บผลผลิต").extraBold().h4(),
+                    ),
+
+                    SizedBox(height: 8),
+
+                    SizedBox(height: 8),
+
+                    //______________________________________________________
+                    Divider(
+                      child: Text("สรุปผล").extraBold().h4(),
+                    ),
+
                     SizedBox(height: 16),
+
                     DataTable(),
+
                     SizedBox(height: 16),
+
+                    // Conclusion and export to excel
                     PrimaryButton(
                       size: ButtonSize(1.15),
                       onPressed: () {},

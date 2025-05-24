@@ -5,11 +5,12 @@ import 'package:smartfarm_mobile/ui/settings.dart';
 
 class ZoneSelector extends HookWidget {
   const ZoneSelector({Key? key}) : super(key: key);
-  
+
   @override
   Widget build(BuildContext context) {
     final currentListOfZones = useValueListenable(Settings.listOfZones);
-    final cureentSelectedZoneIndex = useValueListenable(Settings.selectedZoneIndex);
+    final cureentSelectedZoneIndex =
+        useValueListenable(Settings.selectedZoneIndex);
 
     return CustomDropdown<String>.search(
       hintText: 'Select zone',
@@ -18,6 +19,12 @@ class ZoneSelector extends HookWidget {
       onChanged: (value) {
         print('changing value to: $value');
       },
+      decoration: CustomDropdownDecoration(
+        closedBorder: Border.all(
+            color: Colors.grey), // Add your desired border color and width here
+        expandedBorder: Border.all(
+            color: Colors.grey), // Add your desired border color and width here
+      ),
     );
   }
 }
