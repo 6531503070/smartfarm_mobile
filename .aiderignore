@@ -1,0 +1,13 @@
+# Ignore everything
+/*
+
+# Allow specific directories and their contents
+!.cursor/
+!.vscode/
+!.aider.chat.history.md
+!.aider.input.history
+!.env
+
+# Allow nested files under these directories
+#!*.lua
+#!*.luau
