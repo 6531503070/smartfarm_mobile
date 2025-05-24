@@ -399,6 +399,366 @@ class L10n {
       args: [],
     );
   }
+
+  /// `Inspection Date (DD/MM/YYYY - HH:mm)`
+  String get inspectionDate {
+    return Intl.message(
+      'Inspection Date (DD/MM/YYYY - HH:mm)',
+      name: 'inspectionDate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Planting Section (per zone overview)`
+  String get plantingSection {
+    return Intl.message(
+      'Planting Section (per zone overview)',
+      name: 'plantingSection',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Strength (% per zone)`
+  String get strengthPerZone {
+    return Intl.message(
+      'Strength (% per zone)',
+      name: 'strengthPerZone',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Germination Rate (% per zone)`
+  String get germinationRatePerZone {
+    return Intl.message(
+      'Germination Rate (% per zone)',
+      name: 'germinationRatePerZone',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Watering Method`
+  String get wateringMethod {
+    return Intl.message(
+      'Watering Method',
+      name: 'wateringMethod',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `None`
+  String get none {
+    return Intl.message(
+      'None',
+      name: 'none',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Drip`
+  String get drip {
+    return Intl.message(
+      'Drip',
+      name: 'drip',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Spray`
+  String get spray {
+    return Intl.message(
+      'Spray',
+      name: 'spray',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Hand Watering`
+  String get handWatering {
+    return Intl.message(
+      'Hand Watering',
+      name: 'handWatering',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Fertilized`
+  String get fertilized {
+    return Intl.message(
+      'Fertilized',
+      name: 'fertilized',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Pest Found`
+  String get pestFound {
+    return Intl.message(
+      'Pest Found',
+      name: 'pestFound',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Note`
+  String get note {
+    return Intl.message(
+      'Note',
+      name: 'note',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `- Pests found and quantity (aphids, worms, fungi, etc.)\n- Pest management method (chemical/biological, substance name, usage rate)\n\nOther notes`
+  String get plantingNotePlaceholder {
+    return Intl.message(
+      '- Pests found and quantity (aphids, worms, fungi, etc.)\n- Pest management method (chemical/biological, substance name, usage rate)\n\nOther notes',
+      name: 'plantingNotePlaceholder',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Harvest Section (per zone overview)`
+  String get harvestSection {
+    return Intl.message(
+      'Harvest Section (per zone overview)',
+      name: 'harvestSection',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Total Harvested (per zone)`
+  String get totalHarvested {
+    return Intl.message(
+      'Total Harvested (per zone)',
+      name: 'totalHarvested',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Total Weight (kg)`
+  String get totalWeight {
+    return Intl.message(
+      'Total Weight (kg)',
+      name: 'totalWeight',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Damaged/Defective (kg)`
+  String get damagedDefective {
+    return Intl.message(
+      'Damaged/Defective (kg)',
+      name: 'damagedDefective',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Other notes`
+  String get otherNotes {
+    return Intl.message(
+      'Other notes',
+      name: 'otherNotes',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Summary`
+  String get summary {
+    return Intl.message(
+      'Summary',
+      name: 'summary',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Zone`
+  String get zone {
+    return Intl.message(
+      'Zone',
+      name: 'zone',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Strength (%)`
+  String get strength {
+    return Intl.message(
+      'Strength (%)',
+      name: 'strength',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Germination Rate (%)`
+  String get germinationRate {
+    return Intl.message(
+      'Germination Rate (%)',
+      name: 'germinationRate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Watering Method`
+  String get wateringMethodHeader {
+    return Intl.message(
+      'Watering Method',
+      name: 'wateringMethodHeader',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Fertilized`
+  String get fertilizedHeader {
+    return Intl.message(
+      'Fertilized',
+      name: 'fertilizedHeader',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Pest Found`
+  String get pestFoundHeader {
+    return Intl.message(
+      'Pest Found',
+      name: 'pestFoundHeader',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Planting Notes`
+  String get plantingNotesHeader {
+    return Intl.message(
+      'Planting Notes',
+      name: 'plantingNotesHeader',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Total Harvested`
+  String get totalHarvestedHeader {
+    return Intl.message(
+      'Total Harvested',
+      name: 'totalHarvestedHeader',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Total Weight (kg)`
+  String get totalWeightHeader {
+    return Intl.message(
+      'Total Weight (kg)',
+      name: 'totalWeightHeader',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Damaged/Defective (kg)`
+  String get damagedDefectiveHeader {
+    return Intl.message(
+      'Damaged/Defective (kg)',
+      name: 'damagedDefectiveHeader',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Harvest Notes`
+  String get harvestNotesHeader {
+    return Intl.message(
+      'Harvest Notes',
+      name: 'harvestNotesHeader',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Yes`
+  String get yes {
+    return Intl.message(
+      'Yes',
+      name: 'yes',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No`
+  String get no {
+    return Intl.message(
+      'No',
+      name: 'no',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Good quality`
+  String get goodQuality {
+    return Intl.message(
+      'Good quality',
+      name: 'goodQuality',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Some small fruits`
+  String get someSmallFruits {
+    return Intl.message(
+      'Some small fruits',
+      name: 'someSmallFruits',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Aphids, low`
+  String get aphidsLow {
+    return Intl.message(
+      'Aphids, low',
+      name: 'aphidsLow',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `-`
+  String get dash {
+    return Intl.message(
+      '-',
+      name: 'dash',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<L10n> {

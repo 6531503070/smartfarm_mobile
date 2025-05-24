@@ -1,11 +1,24 @@
 import 'dart:ui';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:shadcn_flutter/shadcn_flutter.dart';
+import 'package:shadcn_flutter/shadcn_flutter.dart'
+    hide Table, TableRow, TableCell;
 import 'package:smartfarm_mobile/ui/hook/use_l10n.dart';
 import 'package:smartfarm_mobile/ui/settings.dart';
+import 'package:flutter/material.dart';
 
 class DataTable extends HookWidget {
-  const DataTable({Key? key}) : super(key: key);
+  final List<String> headers;
+  final List<List<String>> rows;
+  final bool headerRightAlign;
+  final bool cellRightAlign;
+
+  const DataTable({
+    Key? key,
+    required this.headers,
+    required this.rows,
+    this.headerRightAlign = false,
+    this.cellRightAlign = false,
+  }) : super(key: key);
 
   TableCell buildHeaderCell(String text, [bool alignRight = false]) {
     return TableCell(
@@ -30,71 +43,17 @@ class DataTable extends HookWidget {
   @override
   Widget build(BuildContext context) {
     return Table(
-      rows: [
+      columnWidths: const {},
+      children: [
         TableRow(
-          cells: [
-            buildHeaderCell('Zone'),
-            buildHeaderCell('Status'),
-            buildHeaderCell('Overall Yield'),
-            buildHeaderCell('Size/Grade'),
-          ],
+          children: headers
+              .map((header) => buildHeaderCell(header, headerRightAlign))
+              .toList(),
         ),
-        TableRow(
-          cells: [
-            buildCell('Zone 1'),
-            buildCell('Growing'),
-            buildCell('High'),
-            buildCell('Large/A'),
-          ],
-        ),
-        TableRow(
-          cells: [
-            buildCell('Zone 2'),
-            buildCell('Seeding'),
-            buildCell('Medium'),
-            buildCell('Medium/B'),
-          ],
-        ),
-        TableRow(
-          cells: [
-            buildCell('Zone 1'),
-            buildCell('Harvesting'),
-            buildCell('High'),
-            buildCell('Large/A'),
-          ],
-        ),
-        TableRow(
-          cells: [
-            buildCell('Zone 3'),
-            buildCell('Shipped'),
-            buildCell('Low'),
-            buildCell('Small/C'),
-          ],
-        ),
-        TableRow(
-          cells: [
-            buildCell('Zone 2'),
-            buildCell('Spoiled'),
-            buildCell('N/A'),
-            buildCell('N/A'),
-          ],
-        ),
-        TableRow(
-          cells: [
-            buildCell('Zone 1'),
-            buildCell('Growing'),
-            buildCell('Medium'),
-            buildCell('Medium/B'),
-          ],
-        ),
-        TableRow(
-          cells: [
-            buildCell('Zone 1'),
-            buildCell('Harvesting'),
-            buildCell('High'),
-            buildCell('Large/A'),
-          ],
-        ),
+        ...rows.map((row) => TableRow(
+              children:
+                  row.map((cell) => buildCell(cell, cellRightAlign)).toList(),
+            )),
       ],
     );
   }

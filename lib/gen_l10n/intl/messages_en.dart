@@ -23,27 +23,60 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "add": MessageLookupByLibrary.simpleMessage("Add"),
+        "aphidsLow": MessageLookupByLibrary.simpleMessage("Aphids, low"),
         "avgRainfall": MessageLookupByLibrary.simpleMessage("Avg. Rainfall"),
         "avgTemperature":
             MessageLookupByLibrary.simpleMessage("Avg. Temperature"),
         "controlPage": MessageLookupByLibrary.simpleMessage("IOT Controls"),
+        "damagedDefective":
+            MessageLookupByLibrary.simpleMessage("Damaged/Defective (kg)"),
+        "damagedDefectiveHeader":
+            MessageLookupByLibrary.simpleMessage("Damaged/Defective (kg)"),
+        "dash": MessageLookupByLibrary.simpleMessage("-"),
         "dataPage": MessageLookupByLibrary.simpleMessage("Data Management"),
         "diseaseDetection":
             MessageLookupByLibrary.simpleMessage("Disease Detection"),
+        "drip": MessageLookupByLibrary.simpleMessage("Drip"),
         "email": MessageLookupByLibrary.simpleMessage("Email"),
         "exportToLocal": MessageLookupByLibrary.simpleMessage(
             "Export to local (Excel file .xlsx)"),
+        "fertilized": MessageLookupByLibrary.simpleMessage("Fertilized"),
+        "fertilizedHeader": MessageLookupByLibrary.simpleMessage("Fertilized"),
         "finish": MessageLookupByLibrary.simpleMessage("Finish"),
         "forgotPasswordOrContactUs": MessageLookupByLibrary.simpleMessage(
             "Contact us / Forgot password?"),
         "from": MessageLookupByLibrary.simpleMessage("From"),
+        "germinationRate":
+            MessageLookupByLibrary.simpleMessage("Germination Rate (%)"),
+        "germinationRatePerZone": MessageLookupByLibrary.simpleMessage(
+            "Germination Rate (% per zone)"),
+        "goodQuality": MessageLookupByLibrary.simpleMessage("Good quality"),
+        "handWatering": MessageLookupByLibrary.simpleMessage("Hand Watering"),
         "harvest": MessageLookupByLibrary.simpleMessage("Harvest"),
+        "harvestNotesHeader":
+            MessageLookupByLibrary.simpleMessage("Harvest Notes"),
+        "harvestSection": MessageLookupByLibrary.simpleMessage(
+            "Harvest Section (per zone overview)"),
         "home": MessageLookupByLibrary.simpleMessage("Home"),
         "howItAffects": MessageLookupByLibrary.simpleMessage(
             "How it affects (Description)"),
         "humidity": MessageLookupByLibrary.simpleMessage("Humidity"),
+        "inspectionDate": MessageLookupByLibrary.simpleMessage(
+            "Inspection Date (DD/MM/YYYY - HH:mm)"),
         "next": MessageLookupByLibrary.simpleMessage("Next"),
+        "no": MessageLookupByLibrary.simpleMessage("No"),
+        "none": MessageLookupByLibrary.simpleMessage("None"),
         "notRaining": MessageLookupByLibrary.simpleMessage("Not raining"),
+        "note": MessageLookupByLibrary.simpleMessage("Note"),
+        "otherNotes": MessageLookupByLibrary.simpleMessage("Other notes"),
+        "pestFound": MessageLookupByLibrary.simpleMessage("Pest Found"),
+        "pestFoundHeader": MessageLookupByLibrary.simpleMessage("Pest Found"),
+        "plantingNotePlaceholder": MessageLookupByLibrary.simpleMessage(
+            "- Pests found and quantity (aphids, worms, fungi, etc.)\n- Pest management method (chemical/biological, substance name, usage rate)\n\nOther notes"),
+        "plantingNotesHeader":
+            MessageLookupByLibrary.simpleMessage("Planting Notes"),
+        "plantingSection": MessageLookupByLibrary.simpleMessage(
+            "Planting Section (per zone overview)"),
         "prev": MessageLookupByLibrary.simpleMessage("Prev"),
         "produceAmount":
             MessageLookupByLibrary.simpleMessage("Produce Amount (Per Tree)"),
@@ -53,19 +86,40 @@ class MessageLookup extends MessageLookupByLibrary {
         "signIn": MessageLookupByLibrary.simpleMessage("Sign In"),
         "size": MessageLookupByLibrary.simpleMessage("Size"),
         "soilMoisture": MessageLookupByLibrary.simpleMessage("Soil Moisture"),
+        "someSmallFruits":
+            MessageLookupByLibrary.simpleMessage("Some small fruits"),
+        "spray": MessageLookupByLibrary.simpleMessage("Spray"),
         "start": MessageLookupByLibrary.simpleMessage("Start"),
         "stop": MessageLookupByLibrary.simpleMessage("Stop"),
+        "strength": MessageLookupByLibrary.simpleMessage("Strength (%)"),
+        "strengthPerZone":
+            MessageLookupByLibrary.simpleMessage("Strength (% per zone)"),
+        "summary": MessageLookupByLibrary.simpleMessage("Summary"),
         "temperature": MessageLookupByLibrary.simpleMessage("Temperature"),
         "to": MessageLookupByLibrary.simpleMessage("To"),
+        "totalHarvested":
+            MessageLookupByLibrary.simpleMessage("Total Harvested (per zone)"),
+        "totalHarvestedHeader":
+            MessageLookupByLibrary.simpleMessage("Total Harvested"),
+        "totalWeight":
+            MessageLookupByLibrary.simpleMessage("Total Weight (kg)"),
+        "totalWeightHeader":
+            MessageLookupByLibrary.simpleMessage("Total Weight (kg)"),
         "waterUsage": MessageLookupByLibrary.simpleMessage("Water Usage"),
         "watering": MessageLookupByLibrary.simpleMessage("Watering"),
+        "wateringMethod":
+            MessageLookupByLibrary.simpleMessage("Watering Method"),
+        "wateringMethodHeader":
+            MessageLookupByLibrary.simpleMessage("Watering Method"),
         "wateringSchedule":
             MessageLookupByLibrary.simpleMessage("Watering Schedule"),
         "welcomeSignIn": MessageLookupByLibrary.simpleMessage(
             "Today is a new day. It\'s your day. You shape it. Sign in to start managing farm."),
+        "yes": MessageLookupByLibrary.simpleMessage("Yes"),
         "yieldAndDisease":
             MessageLookupByLibrary.simpleMessage("Yield & Disease"),
         "yieldDetection":
-            MessageLookupByLibrary.simpleMessage("Yield Detection")
+            MessageLookupByLibrary.simpleMessage("Yield Detection"),
+        "zone": MessageLookupByLibrary.simpleMessage("Zone")
       };
 }
