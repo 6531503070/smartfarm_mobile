@@ -5,7 +5,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:smartfarm_mobile/gen/assets.gen.dart';
 import 'package:smartfarm_mobile/ui/hook/use_l10n.dart';
-import 'package:smartfarm_mobile/ui/route/navigation_service.dart';
+import 'package:smartfarm_mobile/util/navigation_service.dart';
 import 'package:smartfarm_mobile/ui/theme/app_colors.dart';
 import 'package:smartfarm_mobile/util/login_manager.dart';
 import 'package:smartfarm_mobile/util/performance_monitor.dart';

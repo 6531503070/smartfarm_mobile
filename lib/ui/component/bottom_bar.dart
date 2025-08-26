@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 import 'package:smartfarm_mobile/ui/hook/use_l10n.dart';
-import 'package:smartfarm_mobile/ui/route/navigation_service.dart';
+import 'package:smartfarm_mobile/util/navigation_service.dart';
 import 'package:smartfarm_mobile/ui/theme/app_colors.dart';
 
 class BottomBar extends StatefulHookWidget {

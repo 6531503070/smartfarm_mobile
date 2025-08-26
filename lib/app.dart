@@ -9,7 +9,7 @@ import 'package:smartfarm_mobile/ui/route/control_page.dart';
 import 'package:smartfarm_mobile/ui/route/data_page.dart';
 import 'package:smartfarm_mobile/ui/route/home_page.dart';
 import 'package:smartfarm_mobile/ui/route/login_page.dart';
-import 'package:smartfarm_mobile/ui/route/navigation_service.dart';
+import 'package:smartfarm_mobile/util/navigation_service.dart';
 
 class App extends HookWidget {
   const App({Key? key}) : super(key: key);
