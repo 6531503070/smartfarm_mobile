@@ -431,34 +431,65 @@ class DataPage extends HookWidget {
                             userInputs: userInputs,
                             inspectionDate:
                                 "${DateTime.now().day.toString().padLeft(2, '0')}/${DateTime.now().month.toString().padLeft(2, '0')}/${DateTime.now().year} - ${_value.hour.toString().padLeft(2, '0')}:${_value.minute.toString().padLeft(2, '0')}",
+                            context: context,
                           );
 
                           if (filePath != null) {
-                            // Show success message
-                            material.ScaffoldMessenger.of(context).showSnackBar(
-                              material.SnackBar(
-                                content: material.Text(
-                                    'Excel file exported to Downloads folder: ${filePath.split('/').last}'),
-                                backgroundColor: material.Colors.green,
-                              ),
+                            // Show success message using a simple dialog
+                            showDialog(
+                              context: context,
+                              builder: (BuildContext context) {
+                                return AlertDialog(
+                                  title: Text('Success'),
+                                  content: Text(
+                                      'Excel file exported to Downloads folder: ${filePath.split('/').last}'),
+                                  actions: [
+                                    TextButton(
+                                      onPressed: () =>
+                                          Navigator.of(context).pop(),
+                                      child: Text('OK'),
+                                    ),
+                                  ],
+                                );
+                              },
                             );
                           } else {
-                            // Show error message
-                            material.ScaffoldMessenger.of(context).showSnackBar(
-                              material.SnackBar(
-                                content: material.Text(
-                                    'Failed to export Excel file'),
-                                backgroundColor: material.Colors.red,
-                              ),
+                            // Show error message using a simple dialog
+                            showDialog(
+                              context: context,
+                              builder: (BuildContext context) {
+                                return AlertDialog(
+                                  title: Text('Error'),
+                                  content: Text(
+                                      'Failed to export Excel file. Please check storage permissions.'),
+                                  actions: [
+                                    TextButton(
+                                      onPressed: () =>
+                                          Navigator.of(context).pop(),
+                                      child: Text('OK'),
+                                    ),
+                                  ],
+                                );
+                              },
                             );
                           }
                         } catch (e) {
-                          material.ScaffoldMessenger.of(context).showSnackBar(
-                            material.SnackBar(
-                              content:
-                                  material.Text('Error exporting file: $e'),
-                              backgroundColor: material.Colors.red,
-                            ),
+                          // Show error message using a simple dialog
+                          showDialog(
+                            context: context,
+                            builder: (BuildContext context) {
+                              return AlertDialog(
+                                title: Text('Error'),
+                                content: Text('Error exporting file: $e'),
+                                actions: [
+                                  TextButton(
+                                    onPressed: () =>
+                                        Navigator.of(context).pop(),
+                                    child: Text('OK'),
+                                  ),
+                                ],
+                              );
+                            },
                           );
                         } finally {
                           isExporting.value = false;
