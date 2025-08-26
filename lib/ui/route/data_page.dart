@@ -1,4 +1,7 @@
+import 'dart:io';
+
 import 'package:excel/excel.dart';
+import 'package:path_provider/path_provider.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:smartfarm_mobile/gen_l10n/l10n.dart';
@@ -385,19 +388,131 @@ class DataPage extends HookWidget {
                     PrimaryButton(
                       size: ButtonSize(1.15),
                       onPressed: () async {
-                        final excel = Excel.createExcel();
-                        final sheet =
-                            excel.sheets[excel.getDefaultSheet() as String];
-                        sheet!.setColWidth(2, 50);
-                        sheet.setColAutoFit(3);
-                        sheet
-                            .cell(CellIndex.indexByColumnRow(
-                                columnIndex: 2, rowIndex: 3))
-                            .value = 'Test Text';
+                        isExporting.value = true;
+                        try {
+                          // Prepare data for export
+                          final plantingData = [
+                            [
+                              '${l10n.zone} 1',
+                              strengthValue.value.toString(),
+                              germinationValue.value.toString(),
+                              wateringMethod.value ?? l10n.none,
+                              isFertilized.value ? l10n.yes : l10n.no,
+                              pestFound.value ? l10n.yes : l10n.no,
+                              plantingNotes.value.isNotEmpty
+                                  ? plantingNotes.value
+                                  : l10n.dash
+                            ],
+                          ];
 
-                        excel.save();
+                          final harvestData = [
+                            [
+                              '${l10n.zone} 1',
+                              totalHarvested.value.toString(),
+                              totalWeight.value.toString(),
+                              damagedDefective.value.toString(),
+                              harvestNotes.value.isNotEmpty
+                                  ? harvestNotes.value
+                                  : l10n.dash
+                            ],
+                          ];
+
+                          final userInputs = {
+                            'Inspection Date':
+                                "${DateTime.now().day.toString().padLeft(2, '0')}/${DateTime.now().month.toString().padLeft(2, '0')}/${DateTime.now().year} - ${_value.hour.toString().padLeft(2, '0')}:${_value.minute.toString().padLeft(2, '0')}",
+                            'Zone': '${l10n.zone} 1',
+                          };
+
+                          final filePath =
+                              await ExcelExportService.exportToExcel(
+                            l10n: l10n,
+                            plantingData: plantingData,
+                            harvestData: harvestData,
+                            userInputs: userInputs,
+                            inspectionDate:
+                                "${DateTime.now().day.toString().padLeft(2, '0')}/${DateTime.now().month.toString().padLeft(2, '0')}/${DateTime.now().year} - ${_value.hour.toString().padLeft(2, '0')}:${_value.minute.toString().padLeft(2, '0')}",
+                            context: context,
+                          );
+
+                          if (filePath != null) {
+                            // Show success message using a simple dialog
+                            showDialog(
+                              context: context,
+                              builder: (BuildContext context) {
+                                return AlertDialog(
+                                  title: Text('Success'),
+                                  content: Text(
+                                      'Excel file exported to Downloads folder: ${filePath.split('/').last}'),
+                                  actions: [
+                                    TextButton(
+                                      onPressed: () =>
+                                          Navigator.of(context).pop(),
+                                      child: Text('OK'),
+                                    ),
+                                  ],
+                                );
+                              },
+                            );
+                          } else {
+                            // Show error message using a simple dialog
+                            showDialog(
+                              context: context,
+                              builder: (BuildContext context) {
+                                return AlertDialog(
+                                  title: Text('Error'),
+                                  content: Text(
+                                      'Failed to export Excel file. Please check storage permissions.'),
+                                  actions: [
+                                    TextButton(
+                                      onPressed: () =>
+                                          Navigator.of(context).pop(),
+                                      child: Text('OK'),
+                                    ),
+                                  ],
+                                );
+                              },
+                            );
+                          }
+                        } catch (e) {
+                          // Show error message using a simple dialog
+                          showDialog(
+                            context: context,
+                            builder: (BuildContext context) {
+                              return AlertDialog(
+                                title: Text('Error'),
+                                content: Text('Error exporting file: $e'),
+                                actions: [
+                                  TextButton(
+                                    onPressed: () =>
+                                        Navigator.of(context).pop(),
+                                    child: Text('OK'),
+                                  ),
+                                ],
+                              );
+                            },
+                          );
+                        } finally {
+                          isExporting.value = false;
+                        }
                       },
-                      child: Text(l10n.exportToLocal),
+                      child: isExporting.value
+                          ? Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                SizedBox(
+                                  width: 16,
+                                  height: 16,
+                                  child: material.CircularProgressIndicator(
+                                    strokeWidth: 2,
+                                    valueColor: material.AlwaysStoppedAnimation<
+                                        material.Color>(material.Colors.white),
+                                  ),
+                                ),
+                                SizedBox(width: 8),
+                                Text('Exporting...'),
+                              ],
+                            )
+                          : Text(l10n.exportToLocal),
                     ),
                   ],
                 ),

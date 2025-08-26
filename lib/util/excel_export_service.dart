@@ -1,7 +1,10 @@
 import 'dart:io';
 import 'package:excel/excel.dart';
 import 'package:path_provider/path_provider.dart';
+import 'package:external_path/external_path.dart';
+import 'package:flutter/material.dart';
 import 'package:smartfarm_mobile/gen_l10n/l10n.dart';
+import 'package:smartfarm_mobile/util/permission_handler.dart';
 
 class ExcelExportService {
   /// Export farm data to Excel file
@@ -11,8 +14,26 @@ class ExcelExportService {
     required List<List<String>> harvestData,
     required Map<String, dynamic> userInputs,
     required String inspectionDate,
+    required BuildContext context,
   }) async {
     try {
+      // Check and request storage permission
+      final hasPermission = await PermissionHandler.ensureStoragePermission();
+      if (!hasPermission) {
+        // Show permission explanation dialog
+        final shouldRequest =
+            await PermissionHandler.showPermissionExplanationDialog(context);
+        if (shouldRequest) {
+          final granted = await PermissionHandler.requestStoragePermission();
+          if (!granted) {
+            await PermissionHandler.showPermissionDeniedDialog(context);
+            return null;
+          }
+        } else {
+          return null;
+        }
+      }
+
       // Create Excel workbook
       final excel = Excel.createExcel();
 
@@ -159,11 +180,15 @@ class ExcelExportService {
 
       // Note: Column width setting is not available in this version of the excel package
 
-      // Get documents directory
-      final directory = await getApplicationDocumentsDirectory();
+      // Get download directory with permission check
+      final downloadDirectory = await PermissionHandler.getDownloadDirectory();
+      if (downloadDirectory == null) {
+        throw Exception('Unable to access download directory');
+      }
+
       final fileName =
           'smartfarm_data_${DateTime.now().millisecondsSinceEpoch}.xlsx';
-      final filePath = '${directory.path}/$fileName';
+      final filePath = '$downloadDirectory/$fileName';
 
       // Save file
       final file = File(filePath);
