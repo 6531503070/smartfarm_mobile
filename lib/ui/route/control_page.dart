@@ -144,7 +144,7 @@ class ControlPage extends HookWidget {
                           SizedBox(height: 16),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
-                            spacing: 4.0,
+                            spacing: 2.0,
                             children: [
                               // from
                               Text("${l10n.from}:"),

@@ -8,7 +8,6 @@ import 'package:smartfarm_mobile/ui/hook/use_l10n.dart';
 import 'package:smartfarm_mobile/util/navigation_service.dart';
 import 'package:smartfarm_mobile/ui/theme/app_colors.dart';
 import 'package:smartfarm_mobile/util/login_manager.dart';
-import 'package:smartfarm_mobile/util/performance_monitor.dart';
 
 class LoginPage extends StatefulHookWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -17,7 +16,7 @@ class LoginPage extends StatefulHookWidget {
   State<LoginPage> createState() => _LoginState();
 }
 
-class _LoginState extends State<LoginPage> with PerformanceTracking {
+class _LoginState extends State<LoginPage> {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
 
