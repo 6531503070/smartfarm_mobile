@@ -1,6 +1,7 @@
 import 'dart:io';
 import 'package:excel/excel.dart';
 import 'package:path_provider/path_provider.dart';
+import 'package:external_path/external_path.dart';
 import 'package:smartfarm_mobile/gen_l10n/l10n.dart';
 
 class ExcelExportService {
@@ -159,11 +160,13 @@ class ExcelExportService {
 
       // Note: Column width setting is not available in this version of the excel package
 
-      // Get documents directory
-      final directory = await getApplicationDocumentsDirectory();
+      // Get download directory
+      final downloadDirectory =
+          await ExternalPath.getExternalStoragePublicDirectory(
+              ExternalPath.DIRECTORY_DOWNLOADS);
       final fileName =
           'smartfarm_data_${DateTime.now().millisecondsSinceEpoch}.xlsx';
-      final filePath = '${directory.path}/$fileName';
+      final filePath = '$downloadDirectory/$fileName';
 
       // Save file
       final file = File(filePath);

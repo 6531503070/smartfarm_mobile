@@ -38,6 +38,7 @@ dependencies:
   # For Filesystem
   path: ^1.9.0
   path_provider: ^2.1.2
+  external_path: ^1.0.3
 
   # For Excel Export
   excel: ^2.1.0
