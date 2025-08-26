@@ -21,6 +21,37 @@ class HomePage extends HookWidget {
     final l10n = useL10n();
     final colors = AppColors.light();
 
+    // Memoize chart data to prevent recreation on every build
+    final waterUsageData = useMemoized(
+        () => <SalesData>[
+              SalesData('Jan', 35),
+              SalesData('Feb', 28),
+              SalesData('Mar', 34),
+              SalesData('Apr', 32),
+              SalesData('May', 40)
+            ],
+        []);
+
+    final temperatureData = useMemoized(
+        () => <SalesData>[
+              SalesData('Jan', 35),
+              SalesData('Feb', 28),
+              SalesData('Mar', 34),
+              SalesData('Apr', 32),
+              SalesData('May', 40)
+            ],
+        []);
+
+    final rainfallData = useMemoized(
+        () => <SalesData>[
+              SalesData('Jan', 0),
+              SalesData('Feb', 0.1),
+              SalesData('Mar', 0),
+              SalesData('Apr', 0),
+              SalesData('May', 0.5)
+            ],
+        []);
+
     return Scaffold(
       headers: [TopBar(title: l10n.home)],
       footers: [BottomBar(currentIndex: 1)],
@@ -31,24 +62,18 @@ class HomePage extends HookWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
               ZoneSelector(),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
 
               // Metric "Water Usage"
               CardInfo(
-                  metricIcon: Icon(Icons.water_drop_sharp,
+                  metricIcon: const Icon(Icons.water_drop_sharp,
                       size: 32, color: Colors.blue),
                   metricName: l10n.waterUsage,
                   chartWidget: SfCartesianChart(
-                    primaryXAxis: CategoryAxis(),
+                    primaryXAxis: const CategoryAxis(),
                     series: <CartesianSeries>[
                       ColumnSeries<SalesData, String>(
-                        dataSource: <SalesData>[
-                          SalesData('Jan', 35),
-                          SalesData('Feb', 28),
-                          SalesData('Mar', 34),
-                          SalesData('Apr', 32),
-                          SalesData('May', 40)
-                        ],
+                        dataSource: waterUsageData,
                         xValueMapper: (SalesData sales, _) => sales.year,
                         yValueMapper: (SalesData sales, _) => sales.sales,
                         color: Colors.blue,
@@ -58,24 +83,18 @@ class HomePage extends HookWidget {
                   data: "640 L / minute",
                   latestUpdate: "2021-10-10 10:10:10"),
 
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
 
               // Metric "Avg. Temperature"
               CardInfo(
-                  metricIcon: Icon(Icons.thermostat_rounded,
+                  metricIcon: const Icon(Icons.thermostat_rounded,
                       size: 32, color: Colors.red),
                   metricName: l10n.avgTemperature,
                   chartWidget: SfCartesianChart(
-                    primaryXAxis: CategoryAxis(),
+                    primaryXAxis: const CategoryAxis(),
                     series: <CartesianSeries>[
                       LineSeries<SalesData, String>(
-                        dataSource: <SalesData>[
-                          SalesData('Jan', 35),
-                          SalesData('Feb', 28),
-                          SalesData('Mar', 34),
-                          SalesData('Apr', 32),
-                          SalesData('May', 40)
-                        ],
+                        dataSource: temperatureData,
                         xValueMapper: (SalesData sales, _) => sales.year,
                         yValueMapper: (SalesData sales, _) => sales.sales,
                         color: Colors.red,
@@ -85,24 +104,18 @@ class HomePage extends HookWidget {
                   data: "25.0°C / minute",
                   latestUpdate: "2021-10-10 10:10:10"),
 
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
 
               // Metric "Avg. Rainfall"
               CardInfo(
-                  metricIcon: Icon(LucideIcons.cloudRain,
+                  metricIcon: const Icon(LucideIcons.cloudRain,
                       size: 32, color: Colors.purple),
                   metricName: l10n.avgRainfall,
                   chartWidget: SfCartesianChart(
-                    primaryXAxis: CategoryAxis(),
+                    primaryXAxis: const CategoryAxis(),
                     series: <CartesianSeries>[
                       BarSeries<SalesData, String>(
-                        dataSource: <SalesData>[
-                          SalesData('Jan', 0),
-                          SalesData('Feb', 0.1),
-                          SalesData('Mar', 0),
-                          SalesData('Apr', 0),
-                          SalesData('May', 0.5)
-                        ],
+                        dataSource: rainfallData,
                         xValueMapper: (SalesData sales, _) => sales.year,
                         yValueMapper: (SalesData sales, _) => sales.sales,
                         color: Colors.purple,

@@ -38,7 +38,8 @@ dependencies:
   # For Filesystem
   path: ^1.9.0
   path_provider: ^2.1.2
-  external_path: ^1.0.3
+  external_path:
+    path: android/external_path_override
   permission_handler: ^11.3.1
 
   # For Excel Export

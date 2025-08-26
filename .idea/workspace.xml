@@ -5,10 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a97b334b-a453-4994-a57d-adfbcda11560" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/cache.dill.track.dill" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/ui/route/data_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/route/data_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/ui/route/home_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/route/home_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/smartfarm_mobile.iml" beforeDir="false" afterPath="$PROJECT_DIR$/smartfarm_mobile.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -35,9 +32,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 5
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
   <component name="ProjectId" id="2ujDBbBZKDu6pD43CmBAHjVaQ10" />
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1" />
@@ -59,11 +56,13 @@
     "RunOnceActivity.readMode.enableVisualFormatting": "true",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
+    "com.google.services.firebase.aqiPopupShown": "true",
     "dart.analysis.tool.window.visible": "false",
     "git-widget-placeholder": "main",
     "io.flutter.reload.alreadyRun": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/User/Desktop/SmartFarm Mobile/smartfarm_mobile",
+    "last_opened_file_path": "C:/Users/User/Desktop/smartfarm_mobile",
+    "settings.editor.selected.configurable": "Errors",
     "show.migrate.to.gradle.popup": "false"
   }
 }]]></component>

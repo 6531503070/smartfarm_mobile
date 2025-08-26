@@ -9,6 +9,7 @@ import 'package:smartfarm_mobile/ui/route/control_page.dart';
 import 'package:smartfarm_mobile/ui/route/data_page.dart';
 import 'package:smartfarm_mobile/ui/route/home_page.dart';
 import 'package:smartfarm_mobile/ui/route/login_page.dart';
+import 'package:smartfarm_mobile/ui/route/navigation_service.dart';
 
 class App extends HookWidget {
   const App({Key? key}) : super(key: key);
@@ -20,6 +21,7 @@ class App extends HookWidget {
     final currentAppTypography = useValueListenable(Settings.appTypography);
 
     return ShadcnApp(
+      navigatorKey: NavigationService.navigatorKey,
       locale: currentLocale,
       title: 'Doitung Smart Farming',
       theme: ThemeData(
@@ -28,7 +30,7 @@ class App extends HookWidget {
         radius: 0.4,
       ),
 
-      home: LoginPage(), // Starter-Page
+      home: const LoginPage(), // Starter-Page
       routes: {
         '/login': (context) => const LoginPage(),
         '/home': (context) => const HomePage(),

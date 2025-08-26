@@ -213,7 +213,7 @@
     },
     {
       "name": "external_path",
-      "rootUri": "file:///C:/Users/User/AppData/Local/Pub/Cache/hosted/pub.dev/external_path-1.0.3",
+      "rootUri": "../android/external_path_override",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -938,7 +938,7 @@
       "languageVersion": "3.6"
     }
   ],
-  "generated": "2025-08-26T08:57:53.245261Z",
+  "generated": "2025-08-26T09:31:17.309106Z",
   "generator": "pub",
   "generatorVersion": "3.6.1",
   "flutterRoot": "file:///D:/dev/flutter",

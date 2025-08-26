@@ -5,8 +5,10 @@ import 'package:flutter/services.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:smartfarm_mobile/gen/assets.gen.dart';
 import 'package:smartfarm_mobile/ui/hook/use_l10n.dart';
+import 'package:smartfarm_mobile/ui/route/navigation_service.dart';
 import 'package:smartfarm_mobile/ui/theme/app_colors.dart';
 import 'package:smartfarm_mobile/util/login_manager.dart';
+import 'package:smartfarm_mobile/util/performance_monitor.dart';
 
 class LoginPage extends StatefulHookWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -15,7 +17,7 @@ class LoginPage extends StatefulHookWidget {
   State<LoginPage> createState() => _LoginState();
 }
 
-class _LoginState extends State<LoginPage> {
+class _LoginState extends State<LoginPage> with PerformanceTracking {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
 
@@ -38,11 +40,14 @@ class _LoginState extends State<LoginPage> {
     final l10n = useL10n();
     final colors = AppColors.light();
 
+    // Memoize the logo image to prevent recreation on every build
+    final logoImage = useMemoized(() => Assets.images.logo.provider(), []);
+
     return Scaffold(
       headers: [
         AppBar(
           height: 0,
-          title: Text(""),
+          title: const Text(""),
         ),
       ],
       footers: [],
@@ -57,7 +62,7 @@ class _LoginState extends State<LoginPage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Image(
-                    image: Assets.images.logo.provider(),
+                    image: logoImage,
                     height: 100,
                   ),
                   Padding(
@@ -67,7 +72,7 @@ class _LoginState extends State<LoginPage> {
                       style: material.Theme.of(context).textTheme.headlineSmall,
                     ),
                   ),
-                  SizedBox(height: 60),
+                  const SizedBox(height: 60),
                   Padding(
                     padding: const EdgeInsets.only(top: 8.0),
                     child: Text(
@@ -76,7 +81,7 @@ class _LoginState extends State<LoginPage> {
                       textAlign: TextAlign.left,
                     ),
                   ),
-                  SizedBox(height: 16),
+                  const SizedBox(height: 16),
                   material.TextFormField(
                     controller: emailController,
                     keyboardType: TextInputType.text,
@@ -103,7 +108,7 @@ class _LoginState extends State<LoginPage> {
                       border: material.OutlineInputBorder(),
                     ),
                   ),
-                  SizedBox(height: 16),
+                  const SizedBox(height: 16),
                   material.TextFormField(
                     controller: passwordController,
                     validator: (value) {
@@ -133,7 +138,7 @@ class _LoginState extends State<LoginPage> {
                           },
                         )),
                   ),
-                  SizedBox(height: 16),
+                  const SizedBox(height: 16),
                   Row(mainAxisAlignment: MainAxisAlignment.end, children: [
                     GestureDetector(
                         onTap: () {
@@ -144,8 +149,8 @@ class _LoginState extends State<LoginPage> {
                           style: TextStyle(color: colors.accent),
                         )),
                   ]),
-                  SizedBox(height: 16),
-                  SizedBox(height: 16),
+                  const SizedBox(height: 16),
+                  const SizedBox(height: 16),
                   SizedBox(
                     width: double.infinity,
                     child: DecoratedBox(
@@ -159,13 +164,13 @@ class _LoginState extends State<LoginPage> {
                             BoxShadow(
                                 color: material.Colors.grey.withOpacity(0.7),
                                 blurRadius: 5,
-                                offset: Offset(3, 3),
+                                offset: const Offset(3, 3),
                                 spreadRadius: 3)
                           ]),
                       child: material.ElevatedButton(
                         onPressed: _signIn,
                         style: material.ElevatedButton.styleFrom(
-                          padding: EdgeInsets.symmetric(vertical: 5),
+                          padding: const EdgeInsets.symmetric(vertical: 5),
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(5)),
                           backgroundColor: Colors.transparent,
@@ -176,14 +181,14 @@ class _LoginState extends State<LoginPage> {
                           shadowColor: Colors.transparent,
                         ),
                         child: Padding(
-                          padding: EdgeInsets.all(10.0),
+                          padding: const EdgeInsets.all(10.0),
                           child: _isSigningIn
-                              ? material.CircularProgressIndicator(
+                              ? const material.CircularProgressIndicator(
                                   color: Colors.white,
                                 )
                               : Text(
                                   l10n.signIn,
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                       fontSize: 16,
                                       fontWeight: FontWeight.bold,
                                       color: Colors.white),
@@ -202,6 +207,6 @@ class _LoginState extends State<LoginPage> {
   }
 
   void _signIn() async {
-    Navigator.pushNamed(context, '/home');
+    NavigationService.navigateToHome();
   }
 }

@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:page_transition/page_transition.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 import 'package:smartfarm_mobile/ui/hook/use_l10n.dart';
-import 'package:smartfarm_mobile/ui/route/control_page.dart';
-import 'package:smartfarm_mobile/ui/route/data_page.dart';
-import 'package:smartfarm_mobile/ui/route/home_page.dart';
+import 'package:smartfarm_mobile/ui/route/navigation_service.dart';
 import 'package:smartfarm_mobile/ui/theme/app_colors.dart';
 
 class BottomBar extends StatefulHookWidget {
@@ -25,46 +22,25 @@ class _BottomBarState extends State<BottomBar> {
   }
 
   void _onItemTapped(int index) {
+    // Don't navigate if already on the current page
+    if (index == widget.currentIndex) return;
+
     switch (index) {
       case 0:
         // Control
-        Navigator.push(
-          context,
-          PageTransition(
-            type: PageTransitionType.fade,
-            child: ControlPage(), 
-          ),
-        );
+        NavigationService.navigateToControl();
         break;
       case 1:
         // Home
-        Navigator.push(
-          context,
-          PageTransition(
-            type: PageTransitionType.fade,
-            child: HomePage(),
-          ),
-        );
+        NavigationService.navigateToHome();
         break;
       case 2:
         // Data
-        Navigator.push(
-          context,
-          PageTransition(
-            type: PageTransitionType.fade,
-            child: DataPage(),
-          ),
-        );
+        NavigationService.navigateToData();
         break;
       // case 3:
       //   // Setting
-      //   Navigator.push(
-      //     context,
-      //     PageTransition(
-      //       type: PageTransitionType.fade,
-      //       child: WalletPage(),
-      //     ),
-      //   );
+      //   NavigationService.navigateToSetting();
       //   break;
     }
   }
@@ -76,25 +52,24 @@ class _BottomBarState extends State<BottomBar> {
 
     return Column(
       mainAxisSize: MainAxisSize.min,
-      children: [        
+      children: [
         SalomonBottomBar(
           backgroundColor: colors.bottomBar,
           currentIndex: widget.currentIndex,
           onTap: _onItemTapped,
-          
           items: [
             SalomonBottomBarItem(
-              icon: Icon(Icons.keyboard_command_key_sharp),
+              icon: const Icon(Icons.keyboard_command_key_sharp),
               title: Text(l10n.controlPage),
               selectedColor: Colors.teal,
             ),
-             SalomonBottomBarItem(
-              icon: Icon(Icons.home_sharp),
+            SalomonBottomBarItem(
+              icon: const Icon(Icons.home_sharp),
               title: Text(l10n.home),
               selectedColor: Colors.orange,
             ),
             SalomonBottomBarItem(
-              icon: Icon(Icons.ssid_chart_sharp),
+              icon: const Icon(Icons.ssid_chart_sharp),
               title: Text(l10n.dataPage),
               selectedColor: Colors.pink,
             ),
