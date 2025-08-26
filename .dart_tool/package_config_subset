@@ -12,8 +12,8 @@ file:///C:/Users/User/AppData/Local/Pub/Cache/hosted/pub.dev/animated_custom_dro
 file:///C:/Users/User/AppData/Local/Pub/Cache/hosted/pub.dev/animated_custom_dropdown-3.1.1/lib/
 archive
 3.0
-file:///C:/Users/User/AppData/Local/Pub/Cache/hosted/pub.dev/archive-4.0.4/
-file:///C:/Users/User/AppData/Local/Pub/Cache/hosted/pub.dev/archive-4.0.4/lib/
+file:///C:/Users/User/AppData/Local/Pub/Cache/hosted/pub.dev/archive-3.6.1/
+file:///C:/Users/User/AppData/Local/Pub/Cache/hosted/pub.dev/archive-3.6.1/lib/
 args
 3.3
 file:///C:/Users/User/AppData/Local/Pub/Cache/hosted/pub.dev/args-2.7.0/
@@ -130,6 +130,10 @@ equatable
 2.12
 file:///C:/Users/User/AppData/Local/Pub/Cache/hosted/pub.dev/equatable-2.0.7/
 file:///C:/Users/User/AppData/Local/Pub/Cache/hosted/pub.dev/equatable-2.0.7/lib/
+excel
+2.17
+file:///C:/Users/User/AppData/Local/Pub/Cache/hosted/pub.dev/excel-2.1.0/
+file:///C:/Users/User/AppData/Local/Pub/Cache/hosted/pub.dev/excel-2.1.0/lib/
 fake_async
 2.12
 file:///C:/Users/User/AppData/Local/Pub/Cache/hosted/pub.dev/fake_async-1.3.1/
@@ -219,9 +223,9 @@ http_parser
 file:///C:/Users/User/AppData/Local/Pub/Cache/hosted/pub.dev/http_parser-4.1.2/
 file:///C:/Users/User/AppData/Local/Pub/Cache/hosted/pub.dev/http_parser-4.1.2/lib/
 image
-3.0
-file:///C:/Users/User/AppData/Local/Pub/Cache/hosted/pub.dev/image-4.5.3/
-file:///C:/Users/User/AppData/Local/Pub/Cache/hosted/pub.dev/image-4.5.3/lib/
+2.15
+file:///C:/Users/User/AppData/Local/Pub/Cache/hosted/pub.dev/image-4.3.0/
+file:///C:/Users/User/AppData/Local/Pub/Cache/hosted/pub.dev/image-4.3.0/lib/
 image_size_getter
 2.12
 file:///C:/Users/User/AppData/Local/Pub/Cache/hosted/pub.dev/image_size_getter-2.4.0/
@@ -366,10 +370,6 @@ pool
 2.12
 file:///C:/Users/User/AppData/Local/Pub/Cache/hosted/pub.dev/pool-1.5.1/
 file:///C:/Users/User/AppData/Local/Pub/Cache/hosted/pub.dev/pool-1.5.1/lib/
-posix
-3.0
-file:///C:/Users/User/AppData/Local/Pub/Cache/hosted/pub.dev/posix-6.0.1/
-file:///C:/Users/User/AppData/Local/Pub/Cache/hosted/pub.dev/posix-6.0.1/lib/
 provider
 2.12
 file:///C:/Users/User/AppData/Local/Pub/Cache/hosted/pub.dev/provider-6.1.2/
@@ -568,8 +568,8 @@ file:///C:/Users/User/AppData/Local/Pub/Cache/hosted/pub.dev/yaml-3.1.3/
 file:///C:/Users/User/AppData/Local/Pub/Cache/hosted/pub.dev/yaml-3.1.3/lib/
 smartfarm_mobile
 3.6
-file:///C:/Users/User/Desktop/SmartFarm%20Mobile/smartfarm_mobile/
-file:///C:/Users/User/Desktop/SmartFarm%20Mobile/smartfarm_mobile/lib/
+file:///C:/Users/User/Desktop/smartfarm_mobile/
+file:///C:/Users/User/Desktop/smartfarm_mobile/lib/
 _macros
 3.4
 file:///D:/dev/flutter/bin/cache/dart-sdk/pkg/_macros/

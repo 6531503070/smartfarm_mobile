@@ -1,3 +1,4 @@
+import 'package:excel/excel.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:smartfarm_mobile/gen_l10n/l10n.dart';
@@ -8,6 +9,7 @@ import 'package:smartfarm_mobile/ui/component/zone_widget.dart';
 import 'package:smartfarm_mobile/ui/hook/use_l10n.dart';
 import 'package:smartfarm_mobile/ui/settings.dart';
 import 'package:smartfarm_mobile/ui/theme/app_colors.dart';
+import 'package:smartfarm_mobile/util/excel_export_service.dart';
 
 import 'package:flutter/material.dart' as material;
 import 'package:shadcn_flutter/shadcn_flutter.dart';
@@ -22,8 +24,19 @@ class DataPage extends HookWidget {
     final StepperController harvestController = StepperController();
     final StepperController pestDiseaseController = StepperController();
 
-    double value = 0;
-    String? selectedValue;
+    // State management for form inputs
+    final strengthValue = useState<double>(0);
+    final germinationValue = useState<double>(0);
+    final wateringMethod = useState<String?>(null);
+    final isFertilized = useState<bool>(false);
+    final pestFound = useState<bool>(false);
+    final plantingNotes = useState<String>('');
+    final totalHarvested = useState<double>(0);
+    final totalWeight = useState<double>(0);
+    final damagedDefective = useState<double>(0);
+    final harvestNotes = useState<String>('');
+    final isExporting = useState<bool>(false);
+
     TimeOfDay _value = TimeOfDay.now();
 
     return Scaffold(
@@ -88,8 +101,8 @@ class DataPage extends HookWidget {
                           width: 128,
                           child: NumberInput(
                             showButtons: true,
-                            initialValue: value,
-                            onChanged: (value) {},
+                            initialValue: strengthValue.value,
+                            onChanged: (value) => strengthValue.value = value,
                           ),
                         ),
                       ],
@@ -107,8 +120,9 @@ class DataPage extends HookWidget {
                           width: 128,
                           child: NumberInput(
                             showButtons: true,
-                            initialValue: value,
-                            onChanged: (value) {},
+                            initialValue: germinationValue.value,
+                            onChanged: (value) =>
+                                germinationValue.value = value,
                           ),
                         ),
                       ],
@@ -128,8 +142,8 @@ class DataPage extends HookWidget {
                             itemBuilder: (context, item) {
                               return Text(item);
                             },
-                            onChanged: (value) {},
-                            value: selectedValue,
+                            onChanged: (value) => wateringMethod.value = value,
+                            value: wateringMethod.value,
                             placeholder: Text(l10n.none),
                             popupConstraints: const BoxConstraints(
                               maxHeight: 300,
@@ -168,8 +182,11 @@ class DataPage extends HookWidget {
                       children: [
                         Text(l10n.fertilized),
                         Checkbox(
-                          state: CheckboxState.checked,
-                          onChanged: (value) {},
+                          state: isFertilized.value
+                              ? CheckboxState.checked
+                              : CheckboxState.unchecked,
+                          onChanged: (value) => isFertilized.value =
+                              value == CheckboxState.checked,
                         ),
                       ],
                     ),
@@ -183,8 +200,11 @@ class DataPage extends HookWidget {
                       children: [
                         Text(l10n.pestFound),
                         Checkbox(
-                          state: CheckboxState.checked,
-                          onChanged: (value) {},
+                          state: pestFound.value
+                              ? CheckboxState.checked
+                              : CheckboxState.unchecked,
+                          onChanged: (value) =>
+                              pestFound.value = value == CheckboxState.checked,
                         ),
                       ],
                     ),
@@ -202,12 +222,8 @@ class DataPage extends HookWidget {
                           width: MediaQuery.of(context).size.width *
                               0.8, // 80% of width
                           child: TextArea(
-                            initialValue: '',
-                            // placeholder: Text(
-                            //     "- ศัตรูพืชที่พบและปริมาณ (เพลี้ย, หนอน, เชื้อรา ฯลฯ)\n"
-                            //     "- วิธีการจัดการศัตรูพืช (สารเคมี/ชีวภาพ, ชื่อสาร, อัตราใช้)\n"
-                            //     "\n"
-                            //     "หมายเหตุอื่นๆ"),
+                            initialValue: plantingNotes.value,
+                            onChanged: (value) => plantingNotes.value = value,
                             placeholder: Text(l10n.otherNotes),
                             expandableHeight: true,
                           ),
@@ -236,8 +252,8 @@ class DataPage extends HookWidget {
                           width: 128,
                           child: NumberInput(
                             showButtons: true,
-                            initialValue: value,
-                            onChanged: (value) {},
+                            initialValue: totalHarvested.value,
+                            onChanged: (value) => totalHarvested.value = value,
                           ),
                         ),
                       ],
@@ -255,8 +271,8 @@ class DataPage extends HookWidget {
                           width: 128,
                           child: NumberInput(
                             showButtons: true,
-                            initialValue: value,
-                            onChanged: (value) {},
+                            initialValue: totalWeight.value,
+                            onChanged: (value) => totalWeight.value = value,
                           ),
                         ),
                       ],
@@ -274,8 +290,9 @@ class DataPage extends HookWidget {
                           width: 128,
                           child: NumberInput(
                             showButtons: true,
-                            initialValue: value,
-                            onChanged: (value) {},
+                            initialValue: damagedDefective.value,
+                            onChanged: (value) =>
+                                damagedDefective.value = value,
                           ),
                         ),
                       ],
@@ -294,7 +311,8 @@ class DataPage extends HookWidget {
                           width: MediaQuery.of(context).size.width *
                               0.8, // 80% of width
                           child: TextArea(
-                            initialValue: '',
+                            initialValue: harvestNotes.value,
+                            onChanged: (value) => harvestNotes.value = value,
                             placeholder: Text(l10n.otherNotes),
                             expandableHeight: true,
                           ),
@@ -325,21 +343,14 @@ class DataPage extends HookWidget {
                       rows: [
                         [
                           '${l10n.zone} 1',
-                          '90',
-                          '85',
-                          l10n.drip,
-                          l10n.yes,
-                          l10n.yes,
-                          l10n.aphidsLow
-                        ],
-                        [
-                          '${l10n.zone} 2',
-                          '80',
-                          '75',
-                          l10n.spray,
-                          l10n.no,
-                          l10n.no,
-                          l10n.dash
+                          strengthValue.value.toString(),
+                          germinationValue.value.toString(),
+                          wateringMethod.value ?? l10n.none,
+                          isFertilized.value ? l10n.yes : l10n.no,
+                          pestFound.value ? l10n.yes : l10n.no,
+                          plantingNotes.value.isNotEmpty
+                              ? plantingNotes.value
+                              : l10n.dash
                         ],
                       ],
                     ),
@@ -358,28 +369,35 @@ class DataPage extends HookWidget {
                       rows: [
                         [
                           '${l10n.zone} 1',
-                          '120',
-                          '35.5',
-                          '2.0',
-                          l10n.goodQuality
-                        ],
-                        [
-                          '${l10n.zone} 2',
-                          '100',
-                          '28.0',
-                          '1.5',
-                          l10n.someSmallFruits
+                          totalHarvested.value.toString(),
+                          totalWeight.value.toString(),
+                          damagedDefective.value.toString(),
+                          harvestNotes.value.isNotEmpty
+                              ? harvestNotes.value
+                              : l10n.dash
                         ],
                       ],
                     ),
 
                     SizedBox(height: 16),
 
-                    // Conclusion and export to excel
+                    // Export to Excel
                     PrimaryButton(
                       size: ButtonSize(1.15),
-                      onPressed: () {},
-                      child: Text(l10n.exportToLocal).semiBold(),
+                      onPressed: () async {
+                        final excel = Excel.createExcel();
+                        final sheet =
+                            excel.sheets[excel.getDefaultSheet() as String];
+                        sheet!.setColWidth(2, 50);
+                        sheet.setColAutoFit(3);
+                        sheet
+                            .cell(CellIndex.indexByColumnRow(
+                                columnIndex: 2, rowIndex: 3))
+                            .value = 'Test Text';
+
+                        excel.save();
+                      },
+                      child: Text(l10n.exportToLocal),
                     ),
                   ],
                 ),

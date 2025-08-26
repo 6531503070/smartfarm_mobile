@@ -10,6 +10,7 @@ import 'package:smartfarm_mobile/ui/component/top_bar.dart';
 import 'package:smartfarm_mobile/ui/component/zone_widget.dart';
 import 'package:smartfarm_mobile/ui/hook/use_l10n.dart';
 import 'package:smartfarm_mobile/ui/settings.dart';
+import 'package:smartfarm_mobile/data/sensor_data.dart';
 
 class ControlPage extends HookWidget {
   const ControlPage({Key? key}) : super(key: key);
@@ -18,11 +19,14 @@ class ControlPage extends HookWidget {
   Widget build(BuildContext context) {
     final l10n = useL10n();
     final appTheme = useValueListenable(Settings.appTheme);
-    final _from = useState(TimeOfDay.now());
-    final _to = useState(TimeOfDay.now());
+    final _from = useState(TimeOfDay(
+        hour: SensorData.defaultHour, minute: SensorData.defaultMinute));
+    final _to = useState(TimeOfDay(
+        hour: SensorData.defaultHour, minute: SensorData.defaultMinute));
     final checkboxState = useState(CheckboxState.unchecked);
     final selectedSchedules = useState<List<String>>([]);
-    final soilMoistureTriggering = useState<double>(0);
+    final soilMoistureTriggering =
+        useState<double>(SensorData.soilMoistureThreshold);
 
     String formatTime(TimeOfDay time) {
       final hour = time.hour.toString().padLeft(2, '0');
@@ -67,7 +71,7 @@ class ControlPage extends HookWidget {
                     // Soil Moisture
                     StatusCard(
                         title: l10n.soilMoisture,
-                        statusValue: "50%",
+                        statusValue: SensorData.soilMoistureValue,
                         statusIcon:
                             const Icon(bootstrap.BootstrapIcons.moisture),
                         badgeType: BadgeType.secondary),
@@ -75,14 +79,14 @@ class ControlPage extends HookWidget {
                     // Humidity
                     StatusCard(
                         title: l10n.humidity,
-                        statusValue: "70%",
+                        statusValue: SensorData.humidityValue,
                         statusIcon: const Icon(lucide.LucideIcons.cloudSunRain),
                         badgeType: BadgeType.secondary),
                     SizedBox(height: 8),
                     // Temperature
                     StatusCard(
                         title: l10n.temperature,
-                        statusValue: "42°C",
+                        statusValue: SensorData.temperatureValue,
                         statusIcon: const Icon(
                             bootstrap.BootstrapIcons.thermometer_sun),
                         badgeType: BadgeType.secondary),

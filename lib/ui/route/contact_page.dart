@@ -4,6 +4,7 @@ import 'package:flutter/material.dart' as material;
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:smartfarm_mobile/ui/hook/use_l10n.dart';
 import 'package:smartfarm_mobile/ui/theme/app_colors.dart';
+import 'package:smartfarm_mobile/data/contact_data.dart';
 
 class ContactPage extends HookWidget {
   const ContactPage({Key? key}) : super(key: key);
@@ -25,7 +26,8 @@ class ContactPage extends HookWidget {
         child: SingleChildScrollView(
           child: ConstrainedBox(
             constraints: BoxConstraints(
-              minHeight: MediaQuery.of(context).size.height - material.kToolbarHeight,
+              minHeight:
+                  MediaQuery.of(context).size.height - material.kToolbarHeight,
             ),
             child: Center(
               child: Padding(
@@ -40,26 +42,24 @@ class ContactPage extends HookWidget {
                       CardButton(
                         size: ButtonSize(2),
                         onPressed: () {},
-                        child: const Basic(
-                          title: Text('Contact us'),
-                          subtitle: Text('(email, facebook)'),
+                        child: Basic(
+                          title: Text(ContactData.contactTitle),
+                          subtitle: Text(ContactData.contactSubtitle),
                           content: Column(
                             crossAxisAlignment: CrossAxisAlignment.stretch,
                             children: [
                               Text(''),
                               Text('Email:'),
-                              Text('- 6531503070@lamduan.mfu.ac.th'),
-                              Text('- 6531503074@lamduan.mfu.ac.th'),
-                              Text('- 6531503078@lamduan.mfu.ac.th'),
-                              Text('- 6531503086@lamduan.mfu.ac.th'),
+                              ...ContactData.emails
+                                  .map((email) => Text('- $email')),
                               Text(''),
                               Text('Facebook:'),
-                              Text('- facebook.com/smartfarm'),
+                              Text('- ${ContactData.facebookUrl}'),
                             ],
                           ),
                         ),
                       ),
-                      
+
                       SizedBox(height: 32),
 
                       PrimaryButton(
