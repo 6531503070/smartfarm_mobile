@@ -35,7 +35,7 @@
 	"showSeconds": "Show Seconds",
 	"start": "Start",
 	"stop": "Stop",
-	"inspectionDate": "Inspection Date (DD/MM/YYYY - HH:mm)",
+	"inspectionDate": "Inspection Date",
 	"plantingSection": "Planting Section (per zone overview)",
 	"strengthPerZone": "Strength (% per zone)",
 	"germinationRatePerZone": "Germination Rate (% per zone)",

@@ -61,8 +61,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "howItAffects": MessageLookupByLibrary.simpleMessage(
             "How it affects (Description)"),
         "humidity": MessageLookupByLibrary.simpleMessage("Humidity"),
-        "inspectionDate": MessageLookupByLibrary.simpleMessage(
-            "Inspection Date (DD/MM/YYYY - HH:mm)"),
+        "inspectionDate":
+            MessageLookupByLibrary.simpleMessage("Inspection Date"),
         "next": MessageLookupByLibrary.simpleMessage("Next"),
         "no": MessageLookupByLibrary.simpleMessage("No"),
         "none": MessageLookupByLibrary.simpleMessage("None"),

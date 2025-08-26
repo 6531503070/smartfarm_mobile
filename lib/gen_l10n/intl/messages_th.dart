@@ -62,8 +62,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "howItAffects":
             MessageLookupByLibrary.simpleMessage("ผลกระทบ (อธิบาย)"),
         "humidity": MessageLookupByLibrary.simpleMessage("ความชื้น"),
-        "inspectionDate": MessageLookupByLibrary.simpleMessage(
-            "วันที่ตรวจสอบ (วัน/เดือน/ปี - ชม.นาที)"),
+        "inspectionDate": MessageLookupByLibrary.simpleMessage("วันที่ตรวจสอบ"),
         "next": MessageLookupByLibrary.simpleMessage("ถัดไป"),
         "no": MessageLookupByLibrary.simpleMessage("ไม่ใช่"),
         "none": MessageLookupByLibrary.simpleMessage("ไม่มี"),

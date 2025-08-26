@@ -65,8 +65,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "howItAffects": MessageLookupByLibrary.simpleMessage(
             "ဘယ်လိုအကျိုသက်ရောက်မှု (ဖော်ပြချက်)"),
         "humidity": MessageLookupByLibrary.simpleMessage("လေထုစိုထိုင်းဆ"),
-        "inspectionDate": MessageLookupByLibrary.simpleMessage(
-            "စစ်ဆေးသည့်နေ့ (နေ့/လ/နှစ် - နာရီ:မိနစ်)"),
+        "inspectionDate": MessageLookupByLibrary.simpleMessage("စစ်ဆေးသည့်နေ့"),
         "next": MessageLookupByLibrary.simpleMessage("နောက်တစ်ခု"),
         "no": MessageLookupByLibrary.simpleMessage("မဟုတ်ပါ"),
         "none": MessageLookupByLibrary.simpleMessage("မရှိပါ"),

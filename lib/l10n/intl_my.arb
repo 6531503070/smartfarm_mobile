@@ -35,7 +35,7 @@
 	"showSeconds": "စက္ကန့်များကိုပြပါ",
 	"start": "စတင်ပါ",
 	"stop": "ရပ်တန့်ပါ",
-	"inspectionDate": "စစ်ဆေးသည့်နေ့ (နေ့/လ/နှစ် - နာရီ:မိနစ်)",
+	"inspectionDate": "စစ်ဆေးသည့်နေ့",
 	"plantingSection": "စိုက်ပျိုးမှုအပိုင်း (ဇုန်အလိုက်)",
 	"strengthPerZone": "အားကောင်းမှု (% ဇုန်အလိုက်)",
 	"germinationRatePerZone": "အင်အားဖြစ်နှုန်း (% ဇုန်အလိုက်)",

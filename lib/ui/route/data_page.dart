@@ -64,8 +64,6 @@ class DataPage extends HookWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    //______________________________________________________
-
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -87,9 +85,8 @@ class DataPage extends HookWidget {
                     ),
                     SizedBox(height: 16),
 
-                    //______________________________________________________
                     Divider(
-                      child: Text(l10n.plantingSection).extraBold().h4(),
+                      child: Text(l10n.plantingSection).extraBold(),
                     ),
 
                     SizedBox(height: 8),
@@ -99,10 +96,11 @@ class DataPage extends HookWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text(l10n.strengthPerZone),
+                        Text(l10n.strengthPerZone).xSmall(),
                         SizedBox(
                           width: 128,
                           child: NumberInput(
+                            style: TextStyle(fontSize: 16),
                             showButtons: true,
                             initialValue: strengthValue.value,
                             onChanged: (value) => strengthValue.value = value,
@@ -118,10 +116,11 @@ class DataPage extends HookWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text(l10n.germinationRatePerZone),
+                        Text(l10n.germinationRatePerZone).xSmall(),
                         SizedBox(
                           width: 128,
                           child: NumberInput(
+                            style: TextStyle(fontSize: 16),
                             showButtons: true,
                             initialValue: germinationValue.value,
                             onChanged: (value) =>
@@ -138,7 +137,7 @@ class DataPage extends HookWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text(l10n.wateringMethod),
+                        Text(l10n.wateringMethod).xSmall(),
                         SizedBox(
                           width: 128,
                           child: Select(
@@ -147,7 +146,7 @@ class DataPage extends HookWidget {
                             },
                             onChanged: (value) => wateringMethod.value = value,
                             value: wateringMethod.value,
-                            placeholder: Text(l10n.none),
+                            placeholder: Text(l10n.none).xSmall(),
                             popupConstraints: const BoxConstraints(
                               maxHeight: 300,
                               maxWidth: 200,
@@ -183,7 +182,7 @@ class DataPage extends HookWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text(l10n.fertilized),
+                        Text(l10n.fertilized).xSmall(),
                         Checkbox(
                           state: isFertilized.value
                               ? CheckboxState.checked
@@ -201,7 +200,7 @@ class DataPage extends HookWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text(l10n.pestFound),
+                        Text(l10n.pestFound).xSmall(),
                         Checkbox(
                           state: pestFound.value
                               ? CheckboxState.checked
@@ -219,7 +218,7 @@ class DataPage extends HookWidget {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Text(l10n.note),
+                        Text(l10n.note).xSmall(),
                         SizedBox(height: 8),
                         SizedBox(
                           width: MediaQuery.of(context).size.width *
@@ -227,7 +226,7 @@ class DataPage extends HookWidget {
                           child: TextArea(
                             initialValue: plantingNotes.value,
                             onChanged: (value) => plantingNotes.value = value,
-                            placeholder: Text(l10n.otherNotes),
+                            placeholder: Text(l10n.otherNotes).xSmall(),
                             expandableHeight: true,
                           ),
                         ),
@@ -236,11 +235,8 @@ class DataPage extends HookWidget {
 
                     SizedBox(height: 8),
 
-                    //______________________________________________________
-
-                    //______________________________________________________
                     Divider(
-                      child: Text(l10n.harvestSection).extraBold().h4(),
+                      child: Text(l10n.harvestSection).extraBold(),
                     ),
 
                     SizedBox(height: 8),
@@ -250,10 +246,11 @@ class DataPage extends HookWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text(l10n.totalHarvested),
+                        Text(l10n.totalHarvested).xSmall(),
                         SizedBox(
                           width: 128,
                           child: NumberInput(
+                            style: TextStyle(fontSize: 16),
                             showButtons: true,
                             initialValue: totalHarvested.value,
                             onChanged: (value) => totalHarvested.value = value,
@@ -269,10 +266,11 @@ class DataPage extends HookWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text(l10n.totalWeight),
+                        Text(l10n.totalWeight).xSmall(),
                         SizedBox(
                           width: 128,
                           child: NumberInput(
+                            style: TextStyle(fontSize: 16),
                             showButtons: true,
                             initialValue: totalWeight.value,
                             onChanged: (value) => totalWeight.value = value,
@@ -288,10 +286,11 @@ class DataPage extends HookWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text(l10n.damagedDefective),
+                        Text(l10n.damagedDefective).xSmall(),
                         SizedBox(
                           width: 128,
                           child: NumberInput(
+                            style: TextStyle(fontSize: 16),
                             showButtons: true,
                             initialValue: damagedDefective.value,
                             onChanged: (value) =>
@@ -308,7 +307,7 @@ class DataPage extends HookWidget {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Text(l10n.note),
+                        Text(l10n.note).xSmall(),
                         SizedBox(height: 8),
                         SizedBox(
                           width: MediaQuery.of(context).size.width *
@@ -316,7 +315,7 @@ class DataPage extends HookWidget {
                           child: TextArea(
                             initialValue: harvestNotes.value,
                             onChanged: (value) => harvestNotes.value = value,
-                            placeholder: Text(l10n.otherNotes),
+                            placeholder: Text(l10n.otherNotes).xSmall(),
                             expandableHeight: true,
                           ),
                         ),
@@ -325,62 +324,61 @@ class DataPage extends HookWidget {
 
                     SizedBox(height: 8),
 
-                    //______________________________________________________
-                    Divider(
-                      child: Text(l10n.summary).extraBold().h4(),
-                    ),
+                    // Divider(
+                    //   child: Text(l10n.summary).extraBold(),
+                    // ),
 
-                    SizedBox(height: 16),
+                    // SizedBox(height: 16),
 
-                    // Planting Data Table
-                    DataTable(
-                      headers: [
-                        l10n.zone,
-                        l10n.strength,
-                        l10n.germinationRate,
-                        l10n.wateringMethodHeader,
-                        l10n.fertilizedHeader,
-                        l10n.pestFoundHeader,
-                        l10n.plantingNotesHeader,
-                      ],
-                      rows: [
-                        [
-                          '${l10n.zone} 1',
-                          strengthValue.value.toString(),
-                          germinationValue.value.toString(),
-                          wateringMethod.value ?? l10n.none,
-                          isFertilized.value ? l10n.yes : l10n.no,
-                          pestFound.value ? l10n.yes : l10n.no,
-                          plantingNotes.value.isNotEmpty
-                              ? plantingNotes.value
-                              : l10n.dash
-                        ],
-                      ],
-                    ),
+                    // // Planting Data Table
+                    // DataTable(
+                    //   headers: [
+                    //     l10n.zone,
+                    //     l10n.strength,
+                    //     l10n.germinationRate,
+                    //     l10n.wateringMethodHeader,
+                    //     l10n.fertilizedHeader,
+                    //     l10n.pestFoundHeader,
+                    //     l10n.plantingNotesHeader,
+                    //   ],
+                    //   rows: [
+                    //     [
+                    //       '${l10n.zone} 1',
+                    //       strengthValue.value.toString(),
+                    //       germinationValue.value.toString(),
+                    //       wateringMethod.value ?? l10n.none,
+                    //       isFertilized.value ? l10n.yes : l10n.no,
+                    //       pestFound.value ? l10n.yes : l10n.no,
+                    //       plantingNotes.value.isNotEmpty
+                    //           ? plantingNotes.value
+                    //           : l10n.dash
+                    //     ],
+                    //   ],
+                    // ),
 
-                    SizedBox(height: 16),
+                    // SizedBox(height: 16),
 
-                    // Harvest Data Table
-                    DataTable(
-                      headers: [
-                        l10n.zone,
-                        l10n.totalHarvestedHeader,
-                        l10n.totalWeightHeader,
-                        l10n.damagedDefectiveHeader,
-                        l10n.harvestNotesHeader,
-                      ],
-                      rows: [
-                        [
-                          '${l10n.zone} 1',
-                          totalHarvested.value.toString(),
-                          totalWeight.value.toString(),
-                          damagedDefective.value.toString(),
-                          harvestNotes.value.isNotEmpty
-                              ? harvestNotes.value
-                              : l10n.dash
-                        ],
-                      ],
-                    ),
+                    // // Harvest Data Table
+                    // DataTable(
+                    //   headers: [
+                    //     l10n.zone,
+                    //     l10n.totalHarvestedHeader,
+                    //     l10n.totalWeightHeader,
+                    //     l10n.damagedDefectiveHeader,
+                    //     l10n.harvestNotesHeader,
+                    //   ],
+                    //   rows: [
+                    //     [
+                    //       '${l10n.zone} 1',
+                    //       totalHarvested.value.toString(),
+                    //       totalWeight.value.toString(),
+                    //       damagedDefective.value.toString(),
+                    //       harvestNotes.value.isNotEmpty
+                    //           ? harvestNotes.value
+                    //           : l10n.dash
+                    //     ],
+                    //   ],
+                    // ),
 
                     SizedBox(height: 16),
 

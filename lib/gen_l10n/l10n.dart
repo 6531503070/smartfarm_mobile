@@ -400,10 +400,10 @@ class L10n {
     );
   }
 
-  /// `Inspection Date (DD/MM/YYYY - HH:mm)`
+  /// `Inspection Date`
   String get inspectionDate {
     return Intl.message(
-      'Inspection Date (DD/MM/YYYY - HH:mm)',
+      'Inspection Date',
       name: 'inspectionDate',
       desc: '',
       args: [],

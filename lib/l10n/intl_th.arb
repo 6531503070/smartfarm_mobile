@@ -35,7 +35,7 @@
 	"showSeconds": "แสดงวินาที",
 	"start": "เริ่ม",
 	"stop": "หยุด",
-	"inspectionDate": "วันที่ตรวจสอบ (วัน/เดือน/ปี - ชม.นาที)",
+	"inspectionDate": "วันที่ตรวจสอบ",
 	"plantingSection": "ส่วนการเพาะปลูก (ภาพรวมต่อโซน)",
 	"strengthPerZone": "ความแข็งแรง (% ต่อโซน)",
 	"germinationRatePerZone": "อัตราการงอก (% ต่อโซน)",
