@@ -68,11 +68,11 @@ class _BottomBarState extends State<BottomBar> {
               title: Text(l10n.home),
               selectedColor: Colors.orange,
             ),
-            SalomonBottomBarItem(
-              icon: const Icon(Icons.ssid_chart_sharp),
-              title: Text(l10n.dataPage),
-              selectedColor: Colors.pink,
-            ),
+            // SalomonBottomBarItem(
+            //   icon: const Icon(Icons.ssid_chart_sharp),
+            //   title: Text(l10n.dataPage),
+            //   selectedColor: Colors.pink,
+            // ),
           ],
         ),
       ],

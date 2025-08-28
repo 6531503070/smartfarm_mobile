@@ -79,13 +79,13 @@ class TopBar extends StatelessWidget implements PreferredSizeWidget {
             }, // language btn
           ),
         ),
-        Padding(
-          padding: const EdgeInsets.only(right: 8),
-          child: IconButton(
-            icon: Icon(Icons.notifications_sharp),
-            onPressed: () {}, // notification btn
-          ),
-        ),
+        // Padding(
+        //   padding: const EdgeInsets.only(right: 8),
+        //   child: IconButton(
+        //     icon: Icon(Icons.notifications_sharp),
+        //     onPressed: () {}, // notification btn
+        //   ),
+        // ),
       ],
     );
 

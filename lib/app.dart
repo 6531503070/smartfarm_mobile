@@ -34,7 +34,7 @@ class App extends HookWidget {
       routes: {
         '/login': (context) => const LoginPage(),
         '/home': (context) => const HomePage(),
-        '/data': (context) => const DataPage(),
+        // '/data': (context) => const DataPage(),
         '/control': (context) => const ControlPage(),
         '/contact': (context) => const ContactPage(),
       },
