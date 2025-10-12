@@ -69,3 +69,6 @@ node_modules/
 # Task files
 tasks.json
 tasks/ 
+
+# FVM Version Cache
+.fvm/

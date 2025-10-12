@@ -84,13 +84,13 @@ class ControlPage extends HookWidget {
                         badgeType: BadgeType.secondary),
                     SizedBox(height: 8),
                     // Temperature
-                    StatusCard(
-                        title: l10n.temperature,
-                        statusValue: SensorData.temperatureValue,
-                        statusIcon: const Icon(
-                            bootstrap.BootstrapIcons.thermometer_sun),
-                        badgeType: BadgeType.secondary),
-                    SizedBox(height: 32),
+                   // StatusCard(
+                     //   title: l10n.temperature,
+                       // statusValue: SensorData.temperatureValue,
+                        //statusIcon: const Icon(
+                          //  bootstrap.BootstrapIcons.thermometer_sun),
+                        //badgeType: BadgeType.secondary),
+                    //SizedBox(height: 32),
 
                     // Watering Control
                     Card(
@@ -101,14 +101,14 @@ class ControlPage extends HookWidget {
                           Center(
                             child: Text(l10n.watering).h3(),
                           ),
-                          SizedBox(height: 24),
-                          StatusCard(
-                            title: l10n.raining,
-                            statusValue: l10n.notRaining,
-                            statusIcon:
-                                Icon(bootstrap.BootstrapIcons.cloud_rain),
-                            badgeType: BadgeType.destructive,
-                          ),
+                          //SizedBox(height: 24),
+                          //StatusCard(
+                            //title: l10n.raining,
+                            //statusValue: l10n.notRaining,
+                            //statusIcon:
+                              //  Icon(bootstrap.BootstrapIcons.cloud_rain),
+                            //badgeType: BadgeType.destructive,
+                          //),
                           SizedBox(height: 24),
                           MultiSelect<String>(
                             children: [
