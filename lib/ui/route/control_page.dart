@@ -19,20 +19,27 @@ class ControlPage extends HookWidget {
   Widget build(BuildContext context) {
     final l10n = useL10n();
     final appTheme = useValueListenable(Settings.appTheme);
+    
     final _from = useState(TimeOfDay(
         hour: SensorData.defaultHour, minute: SensorData.defaultMinute));
     final _to = useState(TimeOfDay(
         hour: SensorData.defaultHour, minute: SensorData.defaultMinute));
-    final checkboxState = useState(CheckboxState.unchecked);
+    
+    // Use bool instead of CheckboxState for Switch
+    final showSeconds = useState(false);
     final selectedSchedules = useState<List<String>>([]);
     final soilMoistureTriggering =
         useState<double>(SensorData.soilMoistureThreshold);
+    
+    // Add tab state for switching between scheduled and manual
+    final selectedTab = useState(0);
+    final repeatSchedule = useState(false);
 
     String formatTime(TimeOfDay time) {
       final hour = time.hour.toString().padLeft(2, '0');
       final minute = time.minute.toString().padLeft(2, '0');
       final second = '00';
-      return checkboxState.value == CheckboxState.checked
+      return showSeconds.value
           ? '$hour:$minute:$second'
           : '$hour:$minute';
     }
@@ -46,6 +53,154 @@ class ControlPage extends HookWidget {
       }
     }
 
+    Widget _buildScheduledWatering() {
+      return Column(
+        key: const ValueKey('scheduled'),
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          const SizedBox(height: 24),
+          
+          // Schedule list display
+          Container(
+            constraints: const BoxConstraints(minWidth: 200),
+            padding: const EdgeInsets.all(12),
+            decoration: BoxDecoration(
+              border: Border.all(color: material.Colors.grey[400]!),
+              borderRadius: BorderRadius.circular(8),
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text('${l10n.watering} ${l10n.from}-${l10n.to}',
+                    style: const TextStyle(fontWeight: FontWeight.bold)),
+                const SizedBox(height: 8),
+                if (selectedSchedules.value.isEmpty)
+                  Text('No schedules added yet',
+                      style: TextStyle(color: material.Colors.grey[600]))
+                else
+                  ...selectedSchedules.value.map((schedule) => Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 4),
+                        child: material.Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(schedule),
+                            InkWell(
+                              onTap: () {
+                                selectedSchedules.value =
+                                    selectedSchedules.value
+                                        .where((s) => s != schedule)
+                                        .toList();
+                              },
+                              child: const Icon(material.Icons.close, size: 16),
+                            ),
+                          ],
+                        ),
+                      )),
+              ],
+            ),
+          ),
+          const SizedBox(height: 16),
+          
+          // Time pickers
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            spacing: 8.0,
+            children: [
+              Text("${l10n.from}:"),
+              TimePicker(
+                showSeconds: showSeconds.value,
+                use24HourFormat: true,
+                value: _from.value,
+                onChanged: (value) {
+                  if (value != null) {
+                    _from.value = value;
+                  }
+                },
+              ),
+              const SizedBox(width: 8),
+              Text("${l10n.to}: "),
+              TimePicker(
+                showSeconds: showSeconds.value,
+                use24HourFormat: true,
+                value: _to.value,
+                onChanged: (value) {
+                  if (value != null) {
+                    _to.value = value;
+                  }
+                },
+              ),
+            ],
+          ),
+          const SizedBox(height: 16),
+          
+          // Add button and show seconds toggle
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            spacing: 8.0,
+            children: [
+              PrimaryButton(
+                onPressed: _addSchedule,
+                trailing: const Icon(material.Icons.add),
+                child: Text("${l10n.add} "),
+              ),
+              Row(
+                spacing: 4.0,
+                children: [
+                  Switch(
+                    value: showSeconds.value,
+                    onChanged: (value) {
+                      showSeconds.value = value;
+                    },
+                  ),
+                  Text(l10n.showSeconds),
+                ],
+              ),
+            ],
+          ),
+          const SizedBox(height: 16),
+          
+          // Repeat weekly toggle
+          Row(
+            spacing: 4.0,
+            children: [
+              Switch(
+                value: repeatSchedule.value,
+                onChanged: (value) {
+                  repeatSchedule.value = value;
+                },
+              ),
+              Text(l10n.repeatWeekly),
+            ],
+          ),
+          const SizedBox(height: 16),
+        ],
+      );
+    }
+
+    Widget _buildManualWatering() {
+      return Column(
+        key: const ValueKey('manual'),
+        children: [
+          const SizedBox(height: 32),
+          Text(l10n.manualWateringDescription).muted(),
+          const SizedBox(height: 24),
+          ButtonGroup(
+            children: [
+              PrimaryButton(
+                child: Text(l10n.start),
+                onPressed: () {},
+              ),
+              DestructiveButton(
+                child: Text(l10n.stop),
+                onPressed: () {},
+              ),
+            ],
+          ),
+          const SizedBox(height: 24),
+        ],
+      );
+    }
+
     return Scaffold(
       headers: [
         TopBar(title: l10n.controlPage),
@@ -53,13 +208,12 @@ class ControlPage extends HookWidget {
       footers: [
         BottomBar(currentIndex: 0),
       ],
-      backgroundColor: appTheme.background,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
             padding: const EdgeInsets.all(16),
-            child: ZoneSelector(),
+            child: const ZoneSelector(),
           ),
           Expanded(
             child: SingleChildScrollView(
@@ -75,155 +229,56 @@ class ControlPage extends HookWidget {
                         statusIcon:
                             const Icon(bootstrap.BootstrapIcons.moisture),
                         badgeType: BadgeType.secondary),
-                    SizedBox(height: 8),
+                    const SizedBox(height: 8),
+                    
                     // Humidity
                     StatusCard(
                         title: l10n.humidity,
                         statusValue: SensorData.humidityValue,
                         statusIcon: const Icon(lucide.LucideIcons.cloudSunRain),
                         badgeType: BadgeType.secondary),
-                    SizedBox(height: 8),
-                    // Temperature
-                   // StatusCard(
-                     //   title: l10n.temperature,
-                       // statusValue: SensorData.temperatureValue,
-                        //statusIcon: const Icon(
-                          //  bootstrap.BootstrapIcons.thermometer_sun),
-                        //badgeType: BadgeType.secondary),
-                    //SizedBox(height: 32),
+                    const SizedBox(height: 32),
 
-                    // Watering Control
+                    // Watering Control Card
                     Card(
-                      padding: const EdgeInsets.all(16),
                       child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
-                          Center(
-                            child: Text(l10n.watering).h3(),
-                          ),
-                          //SizedBox(height: 24),
-                          //StatusCard(
-                            //title: l10n.raining,
-                            //statusValue: l10n.notRaining,
-                            //statusIcon:
-                              //  Icon(bootstrap.BootstrapIcons.cloud_rain),
-                            //badgeType: BadgeType.destructive,
-                          //),
-                          SizedBox(height: 24),
-                          MultiSelect<String>(
-                            children: [
-                              SelectGroup(
-                                headers: [
-                                  SelectLabel(
-                                    child: Text(l10n.watering),
-                                  ),
-                                ],
-                                children: [
-                                  for (final schedule
-                                      in selectedSchedules.value)
-                                    SelectItemButton(
-                                      value: schedule,
-                                      child: Text(schedule),
-                                    ),
-                                ],
-                              ),
-                            ],
-                            itemBuilder: (context, schedule) {
-                              return Text(schedule);
-                            },
-                            value: selectedSchedules.value,
-                            onChanged: (values) {
-                              selectedSchedules.value = values.toList();
-                            },
-                            placeholder: Text(
-                                '${l10n.watering} ${l10n.from}-${l10n.to}'),
-                            constraints: const BoxConstraints(
-                              minWidth: 200,
-                            ),
-                          ),
-                          SizedBox(height: 16),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            spacing: 2.0,
-                            children: [
-                              // from
-                              Text("${l10n.from}:"),
-                              TimePicker(
-                                showSeconds: checkboxState.value ==
-                                    CheckboxState.checked,
-                                use24HourFormat: true,
-                                value: _from.value,
-                                onChanged: (value) {
-                                  if (value != null) {
-                                    _from.value = value;
-                                  }
-                                },
-                              ),
-                              SizedBox(height: 8),
-
-                              // to
-                              Text("${l10n.to}: "),
-                              TimePicker(
-                                showSeconds: checkboxState.value ==
-                                    CheckboxState.checked,
-                                use24HourFormat: true,
-                                value: _to.value,
-                                onChanged: (value) {
-                                  if (value != null) {
-                                    _to.value = value;
-                                  }
-                                },
-                              ),
-                            ],
-                          ),
-                          SizedBox(height: 16),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            spacing: 4.0,
-                            children: [
-                              PrimaryButton(
-                                onPressed: _addSchedule,
-                                trailing: const Icon(Icons.add),
-                                child: Text("${l10n.add} "),
-                              ),
-                              Checkbox(
-                                state: checkboxState.value,
-                                onChanged: (value) {
-                                  checkboxState.value = value;
-                                },
-                                trailing: Text(l10n.showSeconds),
-                              ),
-                            ],
-                          ),
-                          SizedBox(height: 16),
-                          // TextField(
-                          //   initialValue: soilMoistureTriggering.toString(),
-                          //   // onChanged: (value) {
-                          //   //   setState(() {
-                          //   //     this.value = double.tryParse(value) ?? 0;
-                          //   //   });
-                          //   // },
-                          //   // features: const [
-                          //   //   InputFeature.spinner(),
-                          //   // ],
-                          //   // submitFormatters: [
-                          //   //   TextInputFormatters.mathExpression(),
-                          //   // ],
-                          // ),
-                          SizedBox(height: 16),
-                          Divider(thickness: 2),
-                          SizedBox(height: 16),
+                          // Tab switcher using ButtonGroup
                           ButtonGroup(
                             children: [
-                              PrimaryButton(
-                                child: Text(l10n.start),
-                                onPressed: () {},
-                              ),
-                              DestructiveButton(
-                                child: Text(l10n.stop),
-                                onPressed: () {},
-                              ),
+                              selectedTab.value == 0
+                                  ? PrimaryButton(
+                                      child: Text(l10n.scheduled),
+                                      onPressed: () {},
+                                    )
+                                  : OutlineButton(
+                                      child: Text(l10n.scheduled),
+                                      onPressed: () {
+                                        selectedTab.value = 0;
+                                      },
+                                    ),
+                              selectedTab.value == 1
+                                  ? PrimaryButton(
+                                      child: Text(l10n.manual),
+                                      onPressed: () {},
+                                    )
+                                  : OutlineButton(
+                                      child: Text(l10n.manual),
+                                      onPressed: () {
+                                        selectedTab.value = 1;
+                                      },
+                                    ),
                             ],
+                          ),
+                          const SizedBox(height: 16),
+                          
+                          // Animated content switcher
+                          AnimatedSwitcher(
+                            duration: const Duration(milliseconds: 200),
+                            child: selectedTab.value == 0
+                                ? _buildScheduledWatering()
+                                : _buildManualWatering(),
                           ),
                         ],
                       ),
