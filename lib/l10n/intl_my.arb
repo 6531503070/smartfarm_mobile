@@ -70,5 +70,9 @@
 	"goodQuality": "အရည်အသွေးကောင်း",
 	"someSmallFruits": "အသီးသေးသေးအနည်းငယ်ရှိသည်",
 	"aphidsLow": "ပိုး, နည်းနည်း",
-	"dash": "-"
+	"dash": "-",
+	"scheduled": "စီစဉ်ထားသော",
+	"manual": "လက်ဖြင့်",
+	"repeatWeekly": "အပတ်စဉ်ထပ်လုပ်",
+	"manualWateringDescription": "ရေပေးစနစ်ကို လက်ဖြင့် စတင်ခြင်း သို့မဟုတ် ရပ်တန့်ခြင်း"
 }

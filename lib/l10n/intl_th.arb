@@ -70,5 +70,9 @@
 	"goodQuality": "คุณภาพดี",
 	"someSmallFruits": "มีผลขนาดเล็กบางส่วน",
 	"aphidsLow": "เพลี้ย, น้อย",
-	"dash": "-"
+	"dash": "-",
+	"scheduled": "ตามกำหนดเวลา",
+	"manual": "ด้วยตนเอง",
+	"repeatWeekly": "ทำซ้ำทุกสัปดาห์",
+	"manualWateringDescription": "เริ่มหรือหยุดระบบรดน้ำด้วยตนเอง"
 }

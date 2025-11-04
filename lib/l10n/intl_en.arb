@@ -70,5 +70,9 @@
 	"goodQuality": "Good quality",
 	"someSmallFruits": "Some small fruits",
 	"aphidsLow": "Aphids, low",
-	"dash": "-"
+	"dash": "-",
+	"scheduled": "Scheduled",
+	"manual": "Manual",  
+	"repeatWeekly": "Repeat Weekly",
+	"manualWateringDescription": "Manually start or stop the irrigation system."
 }
